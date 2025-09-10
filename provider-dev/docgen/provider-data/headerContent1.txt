@@ -1,19 +1,19 @@
 ---
-title: REPLACEME
+title: linode
 hide_title: false
 hide_table_of_contents: false
 keywords:
-  - REPLACEME
+  - linode
   - stackql
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage REPLACEME resources using SQL
+description: Query, deploy and manage Linode resources using SQL
 custom_edit_url: null
-image: /img/stackql-REPLACEME-provider-featured-image.png
+image: /img/stackql-linode-provider-featured-image.png
 id: 'provider-intro'
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
 
-REPLACEME with description for the provider.
+Cloud hosting platform that provides virtual private servers, Kubernetes, managed databases, and other cloud infrastructure services.

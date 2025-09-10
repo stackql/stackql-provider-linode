@@ -1,27 +1,27 @@
 ---
-title: digitalocean
+title: linode
 hide_title: false
 hide_table_of_contents: false
 keywords:
-  - digitalocean
+  - linode
   - stackql
   - infrastructure-as-code
   - configuration-as-data
   - cloud inventory
-description: Query, deploy and manage DigitalOcean resources using SQL
+description: Query, deploy and manage Linode resources using SQL
 custom_edit_url: null
-image: /img/stackql-digitalocean-provider-featured-image.png
+image: /img/stackql-linode-provider-featured-image.png
 id: 'provider-intro'
 ---
 
 import CopyableCode from '@site/src/components/CopyableCode/CopyableCode';
 
-DigitalOcean for managing cloud servers, databases, networking, and storage in a simplified, developer-friendly environment.
+Cloud hosting platform that provides virtual private servers, Kubernetes, managed databases, and other cloud infrastructure services.
 
 :::info[Provider Summary] 
 
-total services: __15__  
-total resources: __207__  
+total services: __20__  
+total resources: __156__  
 
 :::
 
@@ -31,10 +31,10 @@ See also:
 
 ## Installation
 
-To pull the latest version of the `digitalocean` provider, run the following command:  
+To pull the latest version of the `linode` provider, run the following command:  
 
 ```bash
-REGISTRY PULL digitalocean;
+REGISTRY PULL linode;
 ```
 > To view previous provider versions or to pull a specific provider version, see [here](https://stackql.io/docs/language-spec/registry).  
 
@@ -42,7 +42,7 @@ REGISTRY PULL digitalocean;
 
 The following system environment variables are used for authentication by default:  
 
-- <CopyableCode code="DIGITALOCEAN_ACCESS_TOKEN" /> - DigitalOcean API token (see <a href="https://docs.digitalocean.com/reference/api/create-personal-access-token/">How to Create a Personal Access Token</a>)
+- <CopyableCode code="LINODE_TOKEN" /> - Linode API token (see <a href="https://www.linode.com/docs/products/tools/api/guides/manage-api-tokens/#create-an-api-token">How to Create a Linode API Token</a>)
   
 These variables are sourced at runtime (from the local machine or as CI variables/secrets).  
 
@@ -54,7 +54,7 @@ To use different environment variables (instead of the defaults), use the `--aut
 
 ```bash
 
-AUTH='{ "digitalocean": { "type": "bearer",  "credentialsenvvar": "YOUR_DIGITALOCEAN_TOKEN_VAR" }}'
+AUTH='{ "linode": { "type": "bearer",  "credentialsenvvar": "YOUR_LINODE_TOKEN_VAR" }}'
 stackql shell --auth="${AUTH}"
 
 ```
@@ -62,7 +62,7 @@ or using PowerShell:
 
 ```powershell
 
-$Auth = "{ 'digitalocean': { 'type': 'bearer',  'credentialsenvvar': 'YOUR_DIGITALOCEAN_TOKEN_VAR' }}"
+$Auth = "{ 'linode': { 'type': 'bearer',  'credentialsenvvar': 'YOUR_LINODE_TOKEN_VAR' }}"
 stackql.exe shell --auth=$Auth
 
 ```
@@ -72,21 +72,26 @@ stackql.exe shell --auth=$Auth
 <div class="row">
 <div class="providerDocColumn">
 <a href="/services/account/">account</a><br />
-<a href="/services/apps/">apps</a><br />
-<a href="/services/billing/">billing</a><br />
-<a href="/services/compute/">compute</a><br />
-<a href="/services/container_registry/">container_registry</a><br />
+<a href="/services/betas/">betas</a><br />
 <a href="/services/databases/">databases</a><br />
-<a href="/services/genai/">genai</a><br />
-<a href="/services/kubernetes/">kubernetes</a><br />
+<a href="/services/domains/">domains</a><br />
+<a href="/services/images/">images</a><br />
+<a href="/services/linode/">linode</a><br />
+<a href="/services/lke/">lke</a><br />
+<a href="/services/longview/">longview</a><br />
+<a href="/services/managed/">managed</a><br />
+<a href="/services/monitor/">monitor</a><br />
 </div>
 <div class="providerDocColumn">
-<a href="/services/monitoring/">monitoring</a><br />
-<a href="/services/network/">network</a><br />
-<a href="/services/oneclick/">oneclick</a><br />
-<a href="/services/projects/">projects</a><br />
-<a href="/services/serverless/">serverless</a><br />
-<a href="/services/spaces/">spaces</a><br />
+<a href="/services/networking/">networking</a><br />
+<a href="/services/nodebalancers/">nodebalancers</a><br />
+<a href="/services/object_storage/">object_storage</a><br />
+<a href="/services/placement/">placement</a><br />
+<a href="/services/profile/">profile</a><br />
+<a href="/services/regions/">regions</a><br />
+<a href="/services/support/">support</a><br />
+<a href="/services/tags/">tags</a><br />
+<a href="/services/volumes/">volumes</a><br />
 <a href="/services/vpcs/">vpcs</a><br />
 </div>
 </div>

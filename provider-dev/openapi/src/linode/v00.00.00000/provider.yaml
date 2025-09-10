@@ -1,0 +1,188 @@
+id: linode
+name: linode
+version: v00.00.00000
+providerServices:
+  account:
+    id: account:v00.00.00000
+    name: account
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/account.yaml
+    title: account API
+    version: v00.00.00000
+    description: linode account API
+  betas:
+    id: betas:v00.00.00000
+    name: betas
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/betas.yaml
+    title: betas API
+    version: v00.00.00000
+    description: linode betas API
+  databases:
+    id: databases:v00.00.00000
+    name: databases
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/databases.yaml
+    title: databases API
+    version: v00.00.00000
+    description: linode databases API
+  domains:
+    id: domains:v00.00.00000
+    name: domains
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/domains.yaml
+    title: domains API
+    version: v00.00.00000
+    description: linode domains API
+  images:
+    id: images:v00.00.00000
+    name: images
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/images.yaml
+    title: images API
+    version: v00.00.00000
+    description: linode images API
+  linode:
+    id: linode:v00.00.00000
+    name: linode
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/linode.yaml
+    title: linode API
+    version: v00.00.00000
+    description: linode linode API
+  lke:
+    id: lke:v00.00.00000
+    name: lke
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/lke.yaml
+    title: lke API
+    version: v00.00.00000
+    description: linode lke API
+  longview:
+    id: longview:v00.00.00000
+    name: longview
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/longview.yaml
+    title: longview API
+    version: v00.00.00000
+    description: linode longview API
+  managed:
+    id: managed:v00.00.00000
+    name: managed
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/managed.yaml
+    title: managed API
+    version: v00.00.00000
+    description: linode managed API
+  monitor:
+    id: monitor:v00.00.00000
+    name: monitor
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/monitor.yaml
+    title: monitor API
+    version: v00.00.00000
+    description: linode monitor API
+  networking:
+    id: networking:v00.00.00000
+    name: networking
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/networking.yaml
+    title: networking API
+    version: v00.00.00000
+    description: linode networking API
+  nodebalancers:
+    id: nodebalancers:v00.00.00000
+    name: nodebalancers
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/nodebalancers.yaml
+    title: nodebalancers API
+    version: v00.00.00000
+    description: linode nodebalancers API
+  object_storage:
+    id: object_storage:v00.00.00000
+    name: object_storage
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/object_storage.yaml
+    title: object_storage API
+    version: v00.00.00000
+    description: linode object_storage API
+  placement:
+    id: placement:v00.00.00000
+    name: placement
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/placement.yaml
+    title: placement API
+    version: v00.00.00000
+    description: linode placement API
+  profile:
+    id: profile:v00.00.00000
+    name: profile
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/profile.yaml
+    title: profile API
+    version: v00.00.00000
+    description: linode profile API
+  regions:
+    id: regions:v00.00.00000
+    name: regions
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/regions.yaml
+    title: regions API
+    version: v00.00.00000
+    description: linode regions API
+  support:
+    id: support:v00.00.00000
+    name: support
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/support.yaml
+    title: support API
+    version: v00.00.00000
+    description: linode support API
+  tags:
+    id: tags:v00.00.00000
+    name: tags
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/tags.yaml
+    title: tags API
+    version: v00.00.00000
+    description: linode tags API
+  volumes:
+    id: volumes:v00.00.00000
+    name: volumes
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/volumes.yaml
+    title: volumes API
+    version: v00.00.00000
+    description: linode volumes API
+  vpcs:
+    id: vpcs:v00.00.00000
+    name: vpcs
+    preferred: true
+    service:
+      $ref: linode/v00.00.00000/services/vpcs.yaml
+    title: vpcs API
+    version: v00.00.00000
+    description: linode vpcs API
+config:
+  auth:
+    credentialsenvvar: LINODE_TOKEN
+    type: bearer
