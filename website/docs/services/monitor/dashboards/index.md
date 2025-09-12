@@ -257,7 +257,8 @@ service_type,
 type,
 updated,
 widgets
-FROM linode.monitor.dashboards;
+FROM linode.monitor.dashboards
+;
 ```
 </TabItem>
 <TabItem value="get_dashboards">
@@ -270,7 +271,8 @@ data,
 page,
 pages,
 results
-FROM linode.monitor.dashboards;
+FROM linode.monitor.dashboards
+;
 ```
 </TabItem>
 <TabItem value="get_dashboards_all">
@@ -286,7 +288,8 @@ service_type,
 type,
 updated,
 widgets
-FROM linode.monitor.dashboards;
+FROM linode.monitor.dashboards
+;
 ```
 </TabItem>
 </Tabs>

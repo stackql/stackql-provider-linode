@@ -286,7 +286,8 @@ euuid,
 phone,
 state,
 zip
-FROM linode.account.child_accounts;
+FROM linode.account.child_accounts
+;
 ```
 </TabItem>
 <TabItem value="get_child_accounts">
@@ -301,7 +302,8 @@ pages,
 results
 FROM linode.account.child_accounts
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -321,6 +323,7 @@ Create a short-lived bearer token for a parent user on a child account, using th
 
 ```sql
 EXEC linode.account.child_accounts.post_child_account_token 
+
 ;
 ```
 </TabItem>

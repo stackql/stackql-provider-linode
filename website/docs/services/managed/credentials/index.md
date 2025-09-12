@@ -211,7 +211,8 @@ SELECT
 id,
 label,
 last_decrypted
-FROM linode.managed.credentials;
+FROM linode.managed.credentials
+;
 ```
 </TabItem>
 <TabItem value="get_managed_credentials">
@@ -226,7 +227,8 @@ pages,
 results
 FROM linode.managed.credentials
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -252,8 +254,8 @@ data__password,
 data__username
 )
 SELECT 
-'{{ label }}' --required,
-'{{ password }}' --required,
+'{{ label }}' /* required */,
+'{{ password }}' /* required */,
 '{{ username }}'
 RETURNING
 id,
@@ -304,8 +306,6 @@ Updates the label of a Managed Credential. This operation does not update the us
 REPLACE linode.managed.credentials
 SET 
 data__label = '{{ label }}'
-WHERE 
-
 RETURNING
 id,
 label,
@@ -330,6 +330,7 @@ Deletes a Managed Credential.  Linode special forces will no longer have access 
 
 ```sql
 EXEC linode.managed.credentials.post_managed_credential_revoke 
+
 ;
 ```
 </TabItem>
@@ -343,7 +344,8 @@ EXEC linode.managed.credentials.post_managed_credential_username_password
 '{
 "password": "{{ password }}", 
 "username": "{{ username }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

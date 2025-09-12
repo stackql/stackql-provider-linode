@@ -209,7 +209,8 @@ placement_group_limits,
 resolvers,
 site_type,
 status
-FROM linode.regions.regions;
+FROM linode.regions.regions
+;
 ```
 </TabItem>
 <TabItem value="get_regions">
@@ -222,7 +223,8 @@ data,
 page,
 pages,
 results
-FROM linode.regions.regions;
+FROM linode.regions.regions
+;
 ```
 </TabItem>
 </Tabs>

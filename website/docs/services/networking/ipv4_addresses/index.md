@@ -102,8 +102,8 @@ data__assignments,
 data__region
 )
 SELECT 
-'{{ assignments }}' --required,
-'{{ region }}' --required
+'{{ assignments }}' /* required */,
+'{{ region }}' /* required */
 ;
 ```
 </TabItem>
@@ -117,8 +117,8 @@ data__ips,
 data__linode_id
 )
 SELECT 
-'{{ ips }}' --required,
-{{ linode_id }} --required
+'{{ ips }}' /* required */,
+{{ linode_id }} /* required */
 ;
 ```
 </TabItem>

@@ -179,7 +179,8 @@ rules,
 slug
 FROM linode.networking.templates
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 <TabItem value="get_firewall_templates">
@@ -194,7 +195,8 @@ pages,
 results
 FROM linode.networking.templates
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

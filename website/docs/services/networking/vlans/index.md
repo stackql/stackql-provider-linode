@@ -153,7 +153,8 @@ pages,
 results
 FROM linode.networking.vlans
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -172,7 +173,8 @@ AND page_size = '{{ page_size }}';
 This operation deletes a legacy configuration profile VLAN interface. To delete a Linode interface VLAN, use the [Delete a Linode interface](https://techdocs.akamai.com/linode-api/reference/delete-linode-interface) operation.<br /><br />You can't delete a VLAN if it's still attached to a Linode. There are a few ways to detach it:<br />- [Update](https://techdocs.akamai.com/linode-api/reference/put-linode-config) the active configuration profile to remove the VLAN interface, then [reboot](https://techdocs.akamai.com/linode-api/reference/post-reboot-linode-instance) the Linode.<br />- [Create a config profile](https://techdocs.akamai.com/linode-api/reference/post-add-linode-config) without the VLAN interface, then [reboot](https://techdocs.akamai.com/linode-api/reference/post-reboot-linode-instance) the Linode into the new configuration profile.<br />- [Delete](https://techdocs.akamai.com/linode-api/reference/delete-linode-instance) the Linode.<br /><br />To run this operation, you need `read_write` grants to Linodes that use the VLAN.<br /><br />A successful request triggers a `vlan_delete` event.<br /><br />&gt; 📘<br />&gt;<br />&gt; VLANs without any attached Linodes are periodically cleaned up by the system.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.networking.vlans;
+DELETE FROM linode.networking.vlans
+;
 ```
 </TabItem>
 </Tabs>

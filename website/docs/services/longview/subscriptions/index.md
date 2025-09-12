@@ -189,7 +189,8 @@ id,
 clients_included,
 label,
 price
-FROM linode.longview.subscriptions;
+FROM linode.longview.subscriptions
+;
 ```
 </TabItem>
 <TabItem value="get_longview_subscriptions">
@@ -204,7 +205,8 @@ pages,
 results
 FROM linode.longview.subscriptions
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

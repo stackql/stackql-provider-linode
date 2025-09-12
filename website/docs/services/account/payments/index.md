@@ -211,7 +211,8 @@ SELECT
 id,
 date,
 usd
-FROM linode.account.payments;
+FROM linode.account.payments
+;
 ```
 </TabItem>
 <TabItem value="get_payments">
@@ -226,7 +227,8 @@ pages,
 results
 FROM linode.account.payments
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -253,10 +255,10 @@ data__expiry_month,
 data__expiry_year
 )
 SELECT 
-'{{ card_number }}' --required,
-'{{ cvv }}' --required,
-{{ expiry_month }} --required,
-{{ expiry_year }} --required
+'{{ card_number }}' /* required */,
+'{{ cvv }}' /* required */,
+{{ expiry_month }} /* required */,
+{{ expiry_year }} /* required */
 ;
 ```
 </TabItem>
@@ -318,7 +320,8 @@ EXEC linode.account.payments.post_payment
 '{
 "payment_method_id": {{ payment_method_id }}, 
 "usd": "{{ usd }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_pay_pal_payment">
@@ -332,7 +335,8 @@ EXEC linode.account.payments.post_pay_pal_payment
 "cancel_url": "{{ cancel_url }}", 
 "redirect_url": "{{ redirect_url }}", 
 "usd": "{{ usd }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_execute_pay_pal_payment">
@@ -345,7 +349,8 @@ EXEC linode.account.payments.post_execute_pay_pal_payment
 '{
 "payer_id": "{{ payer_id }}", 
 "payment_id": "{{ payment_id }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

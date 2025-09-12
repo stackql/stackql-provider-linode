@@ -273,7 +273,8 @@ ipv4,
 label,
 primary,
 purpose
-FROM linode.linode.config_profile_interfaces;
+FROM linode.linode.config_profile_interfaces
+;
 ```
 </TabItem>
 <TabItem value="get_linode_config_interfaces">
@@ -292,7 +293,8 @@ ipv4,
 label,
 primary,
 purpose
-FROM linode.linode.config_profile_interfaces;
+FROM linode.linode.config_profile_interfaces
+;
 ```
 </TabItem>
 </Tabs>
@@ -327,7 +329,7 @@ SELECT
 '{{ ipv4 }}',
 '{{ label }}',
 {{ primary }},
-'{{ purpose }}' --required,
+'{{ purpose }}' /* required */,
 {{ subnet_id }}
 RETURNING
 id,
@@ -498,8 +500,6 @@ SET
 data__ip_ranges = '{{ ip_ranges }}',
 data__ipv4 = '{{ ipv4 }}',
 data__primary = {{ primary }}
-WHERE 
-
 RETURNING
 id,
 subnet_id,
@@ -529,7 +529,8 @@ purpose;
 Deletes a configuration profile interface from a specific configuration profile, on a specific Linode.<br /><br />- To access this operation, your user needs the `read_write` [grant](https://techdocs.akamai.com/linode-api/reference/get-user-grants) for the Linode.<br /><br />- A successful request triggers a `linode_config_update` [event](https://techdocs.akamai.com/linode-api/reference/get-events).<br /><br />- You can't delete an active configuration profile interface. First, you need to shut down the associated Linode or restart it using another configuration profile.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.linode.config_profile_interfaces;
+DELETE FROM linode.linode.config_profile_interfaces
+;
 ```
 </TabItem>
 </Tabs>
@@ -552,7 +553,8 @@ EXEC linode.linode.config_profile_interfaces.post_linode_config_interfaces
 @@json=
 '{
 "ids": "{{ ids }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

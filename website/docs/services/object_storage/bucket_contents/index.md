@@ -152,7 +152,8 @@ FROM linode.object_storage.bucket_contents
 WHERE marker = '{{ marker }}'
 AND delimiter = '{{ delimiter }}'
 AND prefix = '{{ prefix }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

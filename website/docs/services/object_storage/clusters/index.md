@@ -185,7 +185,8 @@ domain,
 region,
 static_site_domain,
 status
-FROM linode.object_storage.clusters;
+FROM linode.object_storage.clusters
+;
 ```
 </TabItem>
 <TabItem value="get_object_storage_clusters">
@@ -198,7 +199,8 @@ data,
 page,
 pages,
 results
-FROM linode.object_storage.clusters;
+FROM linode.object_storage.clusters
+;
 ```
 </TabItem>
 </Tabs>

@@ -105,6 +105,7 @@ Disables Two Factor Authentication for your User. Once successful, login attempt
 
 ```sql
 EXEC linode.profile.two_factor_authentication.post_tfa_disable 
+
 ;
 ```
 </TabItem>
@@ -114,6 +115,7 @@ Generates a Two Factor secret for your User. To enable TFA for your User, enter 
 
 ```sql
 EXEC linode.profile.two_factor_authentication.post_tfa_enable 
+
 ;
 ```
 </TabItem>
@@ -126,7 +128,8 @@ EXEC linode.profile.two_factor_authentication.post_tfa_confirm
 @@json=
 '{
 "tfa_code": "{{ tfa_code }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

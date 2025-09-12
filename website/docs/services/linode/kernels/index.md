@@ -213,7 +213,8 @@ kvm,
 label,
 pvops,
 version
-FROM linode.linode.kernels;
+FROM linode.linode.kernels
+;
 ```
 </TabItem>
 <TabItem value="get_kernels">
@@ -228,7 +229,8 @@ pages,
 results
 FROM linode.linode.kernels
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

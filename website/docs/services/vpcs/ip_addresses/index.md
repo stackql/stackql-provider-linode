@@ -290,7 +290,8 @@ region,
 subnet_mask
 FROM linode.vpcs.ip_addresses
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 <TabItem value="get_vpcs_ips">
@@ -314,7 +315,8 @@ region,
 subnet_mask
 FROM linode.vpcs.ip_addresses
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

@@ -179,7 +179,8 @@ data,
 page,
 pages,
 results
-FROM linode.monitor.monitor_services;
+FROM linode.monitor.monitor_services
+;
 ```
 </TabItem>
 <TabItem value="get_monitor_services">
@@ -192,7 +193,8 @@ data,
 page,
 pages,
 results
-FROM linode.monitor.monitor_services;
+FROM linode.monitor.monitor_services
+;
 ```
 </TabItem>
 </Tabs>

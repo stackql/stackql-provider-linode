@@ -289,7 +289,8 @@ region,
 subnet_mask,
 type,
 vpc_nat_1_1
-FROM linode.networking.ip_addresses;
+FROM linode.networking.ip_addresses
+;
 ```
 </TabItem>
 <TabItem value="get_ips">
@@ -310,7 +311,8 @@ subnet_mask,
 type,
 vpc_nat_1_1
 FROM linode.networking.ip_addresses
-WHERE skip_ipv6_rdns = '{{ skip_ipv6_rdns }}';
+WHERE skip_ipv6_rdns = '{{ skip_ipv6_rdns }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -372,7 +374,8 @@ EXEC linode.networking.ip_addresses.post_allocate_ip
 "linode_id": {{ linode_id }}, 
 "public": {{ public }}, 
 "type": "{{ type }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_assign_ips">
@@ -385,7 +388,8 @@ EXEC linode.networking.ip_addresses.post_assign_ips
 '{
 "assignments": "{{ assignments }}", 
 "region": "{{ region }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_share_ips">
@@ -398,7 +402,8 @@ EXEC linode.networking.ip_addresses.post_share_ips
 '{
 "ips": "{{ ips }}", 
 "linode_id": {{ linode_id }}
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

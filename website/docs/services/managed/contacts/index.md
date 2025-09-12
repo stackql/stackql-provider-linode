@@ -222,7 +222,8 @@ email,
 group,
 phone,
 updated
-FROM linode.managed.contacts;
+FROM linode.managed.contacts
+;
 ```
 </TabItem>
 <TabItem value="get_managed_contacts">
@@ -237,7 +238,8 @@ pages,
 results
 FROM linode.managed.contacts
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -328,8 +330,6 @@ data__email = '{{ email }}',
 data__group = '{{ group }}',
 data__name = '{{ name }}',
 data__phone = '{{ phone }}'
-WHERE 
-
 RETURNING
 id,
 name,
@@ -355,7 +355,8 @@ updated;
 Deletes a Managed Contact.<br /><br />This operation can only be accessed by the unrestricted users of an account.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.managed.contacts;
+DELETE FROM linode.managed.contacts
+;
 ```
 </TabItem>
 </Tabs>

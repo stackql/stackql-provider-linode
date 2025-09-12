@@ -116,7 +116,8 @@ Get a [Kubernetes Dashboard](https://github.com/kubernetes/dashboard) access URL
 ```sql
 SELECT
 url
-FROM linode.lke.cluster_dashboard;
+FROM linode.lke.cluster_dashboard
+;
 ```
 </TabItem>
 </Tabs>

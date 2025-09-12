@@ -218,7 +218,8 @@ ended,
 enrolled,
 label,
 started
-FROM linode.account.beta_programs;
+FROM linode.account.beta_programs
+;
 ```
 </TabItem>
 <TabItem value="get_enrolled_beta_programs">
@@ -235,7 +236,8 @@ label,
 started
 FROM linode.account.beta_programs
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -258,7 +260,8 @@ EXEC linode.account.beta_programs.post_beta_program
 @@json=
 '{
 "id": "{{ id }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

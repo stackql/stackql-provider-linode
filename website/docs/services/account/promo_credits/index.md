@@ -93,7 +93,7 @@ INSERT INTO linode.account.promo_credits (
 data__promo_code
 )
 SELECT 
-'{{ promo_code }}' --required
+'{{ promo_code }}' /* required */
 RETURNING
 credit_monthly_cap,
 credit_remaining,

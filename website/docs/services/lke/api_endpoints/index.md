@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.lke.api_endpoints;
+FROM linode.lke.api_endpoints
+;
 ```
 </TabItem>
 </Tabs>

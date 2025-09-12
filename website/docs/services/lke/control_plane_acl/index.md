@@ -136,7 +136,8 @@ Get a specific cluster's control plane access control List.<br /><br />[Learn mo
 SELECT
 addresses,
 revision-id
-FROM linode.lke.control_plane_acl;
+FROM linode.lke.control_plane_acl
+;
 ```
 </TabItem>
 </Tabs>
@@ -158,8 +159,6 @@ Updates a specific cluster's control plane access control list.<br /><br />[Lear
 REPLACE linode.lke.control_plane_acl
 SET 
 data__acl = '{{ acl }}'
-WHERE 
-
 RETURNING
 acl;
 ```
@@ -180,7 +179,8 @@ acl;
 Disable control plane access controls and deletes all rules. This has the same effect as calling `PUT` with an acl json map value of `&#123;“enabled” : false&#125;`.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.lke.control_plane_acl;
+DELETE FROM linode.lke.control_plane_acl
+;
 ```
 </TabItem>
 </Tabs>

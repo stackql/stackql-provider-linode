@@ -141,7 +141,8 @@ id,
 group,
 label,
 ssh
-FROM linode.managed.settings;
+FROM linode.managed.settings
+;
 ```
 </TabItem>
 </Tabs>
@@ -163,8 +164,6 @@ Updates a single Linode's Managed settings. This operation can only be accessed 
 REPLACE linode.managed.settings
 SET 
 data__ssh = '{{ ssh }}'
-WHERE 
-
 RETURNING
 id,
 group,

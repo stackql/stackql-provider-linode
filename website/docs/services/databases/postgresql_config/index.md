@@ -140,7 +140,8 @@ pg_stat_monitor_enable,
 pglookout,
 shared_buffers_percentage,
 work_mem
-FROM linode.databases.postgresql_config;
+FROM linode.databases.postgresql_config
+;
 ```
 </TabItem>
 </Tabs>

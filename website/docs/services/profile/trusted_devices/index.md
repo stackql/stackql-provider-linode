@@ -198,7 +198,8 @@ expiry,
 last_authenticated,
 last_remote_addr,
 user_agent
-FROM linode.profile.trusted_devices;
+FROM linode.profile.trusted_devices
+;
 ```
 </TabItem>
 <TabItem value="get_devices">
@@ -211,7 +212,8 @@ data,
 page,
 pages,
 results
-FROM linode.profile.trusted_devices;
+FROM linode.profile.trusted_devices
+;
 ```
 </TabItem>
 </Tabs>
@@ -230,7 +232,8 @@ FROM linode.profile.trusted_devices;
 Revoke an active TrustedDevice for your User.  Once a TrustedDevice is revoked, this device will have to log in again before accessing your Linode account.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.profile.trusted_devices;
+DELETE FROM linode.profile.trusted_devices
+;
 ```
 </TabItem>
 </Tabs>

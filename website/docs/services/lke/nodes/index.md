@@ -142,7 +142,8 @@ SELECT
 id,
 instance_id,
 status
-FROM linode.lke.nodes;
+FROM linode.lke.nodes
+;
 ```
 </TabItem>
 </Tabs>
@@ -161,7 +162,8 @@ FROM linode.lke.nodes;
 Deletes a specific Node from a Node Pool.<br /><br />__Deleting a Node is a destructive action and cannot be undone.__<br /><br />Deleting a Node will reduce the size of the Node Pool it belongs to.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.lke.nodes;
+DELETE FROM linode.lke.nodes
+;
 ```
 </TabItem>
 </Tabs>
@@ -181,6 +183,7 @@ Recycles an individual Node in the designated Kubernetes Cluster. The Node will 
 
 ```sql
 EXEC linode.lke.nodes.post_lke_cluster_node_recycle 
+
 ;
 ```
 </TabItem>

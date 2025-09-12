@@ -146,7 +146,8 @@ pages,
 results
 FROM linode.networking.ipv6_pools
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

@@ -129,7 +129,8 @@ Display the root username and password for an accessible PostgreSQL Managed Data
 SELECT
 password,
 username
-FROM linode.databases.postgresql_instance_credentials;
+FROM linode.databases.postgresql_instance_credentials
+;
 ```
 </TabItem>
 </Tabs>
@@ -149,6 +150,7 @@ Reset the root password for a PostgreSQL Managed Database. A new root password i
 
 ```sql
 EXEC linode.databases.postgresql_instance_credentials.post_databases_postgre_sql_instance_credentials_reset 
+
 ;
 ```
 </TabItem>

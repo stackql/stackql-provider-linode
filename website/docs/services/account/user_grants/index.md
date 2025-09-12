@@ -183,7 +183,8 @@ nodebalancer,
 stackscript,
 volume,
 vpc
-FROM linode.account.user_grants;
+FROM linode.account.user_grants
+;
 ```
 </TabItem>
 </Tabs>
@@ -215,8 +216,6 @@ data__nodebalancer = '{{ nodebalancer }}',
 data__stackscript = '{{ stackscript }}',
 data__volume = '{{ volume }}',
 data__vpc = '{{ vpc }}'
-WHERE 
-
 RETURNING
 database,
 domain,

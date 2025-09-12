@@ -128,7 +128,8 @@ SELECT
 bytes_in,
 bytes_out,
 bytes_total
-FROM linode.linode.network_transfer_statistics;
+FROM linode.linode.network_transfer_statistics
+;
 ```
 </TabItem>
 </Tabs>

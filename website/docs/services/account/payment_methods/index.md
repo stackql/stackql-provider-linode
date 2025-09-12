@@ -216,7 +216,8 @@ created,
 data,
 is_default,
 type
-FROM linode.account.payment_methods;
+FROM linode.account.payment_methods
+;
 ```
 </TabItem>
 <TabItem value="get_payment_methods">
@@ -231,7 +232,8 @@ pages,
 results
 FROM linode.account.payment_methods
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -257,9 +259,9 @@ data__is_default,
 data__type
 )
 SELECT 
-'{{ data }}' --required,
-{{ is_default }} --required,
-'{{ type }}' --required
+'{{ data }}' /* required */,
+{{ is_default }} /* required */,
+'{{ type }}' /* required */
 ;
 ```
 </TabItem>
@@ -306,7 +308,8 @@ for details and instructions.
 Deactivate the specified Payment Method.<br /><br />The default Payment Method can not be deleted. To add a new default Payment Method, run the [Add a payment method](https://techdocs.akamai.com/linode-api/reference/post-payment-method) operation. To designate an existing Payment Method as the default method, run the [Set a default payment method](https://techdocs.akamai.com/linode-api/reference/post-make-payment-method-default) operation.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.account.payment_methods;
+DELETE FROM linode.account.payment_methods
+;
 ```
 </TabItem>
 </Tabs>
@@ -326,6 +329,7 @@ Make the specified Payment Method the default method for automatically processin
 
 ```sql
 EXEC linode.account.payment_methods.post_make_payment_method_default 
+
 ;
 ```
 </TabItem>

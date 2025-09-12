@@ -232,7 +232,8 @@ ipv4,
 label,
 linodes,
 updated
-FROM linode.vpcs.subnets;
+FROM linode.vpcs.subnets
+;
 ```
 </TabItem>
 <TabItem value="get_vpc_subnets">
@@ -249,7 +250,8 @@ linodes,
 updated
 FROM linode.vpcs.subnets
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -274,8 +276,8 @@ data__ipv4,
 data__label
 )
 SELECT 
-'{{ ipv4 }}' --required,
-'{{ label }}' --required
+'{{ ipv4 }}' /* required */,
+'{{ label }}' /* required */
 RETURNING
 id,
 created,
@@ -331,8 +333,6 @@ Update a VPC Subnet.<br /><br />- The User accessing this operation must have `r
 REPLACE linode.vpcs.subnets
 SET 
 data__label = '{{ label }}'
-WHERE 
-
 RETURNING
 id,
 created,
@@ -358,7 +358,8 @@ updated;
 Delete a single VPC subnet.<br /><br />The user accessing this operation must have `read_write` grants to the VPC. A successful request triggers a `subnet_delete` event.<br /><br />&gt; 📘<br />&gt;<br />&gt; You need to delete all the Configuration Profile Interfaces that this subnet is assigned to before you can delete it. If those interfaces are active, the associated Linode needs to be shut down before they can be removed.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.vpcs.subnets;
+DELETE FROM linode.vpcs.subnets
+;
 ```
 </TabItem>
 </Tabs>

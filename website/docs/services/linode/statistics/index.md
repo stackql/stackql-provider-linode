@@ -190,7 +190,8 @@ io,
 netv4,
 netv6,
 title
-FROM linode.linode.statistics;
+FROM linode.linode.statistics
+;
 ```
 </TabItem>
 <TabItem value="get_linode_stats">
@@ -204,7 +205,8 @@ io,
 netv4,
 netv6,
 title
-FROM linode.linode.statistics;
+FROM linode.linode.statistics
+;
 ```
 </TabItem>
 </Tabs>

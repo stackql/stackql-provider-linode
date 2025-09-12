@@ -440,7 +440,8 @@ updated,
 updates,
 used_disk_size_gb,
 version
-FROM linode.databases.mysql_instances;
+FROM linode.databases.mysql_instances
+;
 ```
 </TabItem>
 <TabItem value="get_databases_mysql_instances">
@@ -474,7 +475,8 @@ used_disk_size_gb,
 version
 FROM linode.databases.mysql_instances
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -508,13 +510,13 @@ data__type
 SELECT 
 '{{ allow_list }}',
 {{ cluster_size }},
-'{{ engine }}' --required,
+'{{ engine }}' /* required */,
 '{{ engine_config }}',
 '{{ fork }}',
-'{{ label }}' --required,
-'{{ region }}' --required,
+'{{ label }}' /* required */,
+'{{ region }}' /* required */,
 {{ ssl_connection }},
-'{{ type }}' --required
+'{{ type }}' /* required */
 RETURNING
 id,
 allow_list,
@@ -634,9 +636,7 @@ Apply security patches and updates to the underlying operating system of the MyS
 ```sql
 UPDATE linode.databases.mysql_instances
 SET 
--- No updatable properties
-WHERE 
-;
+-- No updatable properties;
 ```
 </TabItem>
 </Tabs>
@@ -663,8 +663,6 @@ data__label = '{{ label }}',
 data__type = '{{ type }}',
 data__updates = '{{ updates }}',
 data__version = '{{ version }}'
-WHERE 
-
 RETURNING
 id,
 allow_list,
@@ -707,7 +705,8 @@ version;
 Remove a MySQL Managed Database from your account.<br /><br />- The user needs `read_write` [user grant](https://techdocs.akamai.com/linode-api/reference/get-user-grants) access to the database.<br /><br />- The database's status can be `active`, `failed`, or `degraded`.<br /><br />- Only unrestricted users can access this operation. They have access regardless of the acting token's OAuth scopes.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.databases.mysql_instances;
+DELETE FROM linode.databases.mysql_instances
+;
 ```
 </TabItem>
 </Tabs>
@@ -728,6 +727,7 @@ Resume a suspended MySQL Managed Database from your account. This resumes billin
 
 ```sql
 EXEC linode.databases.mysql_instances.resume_databases_mysql_instance 
+
 ;
 ```
 </TabItem>
@@ -737,6 +737,7 @@ Suspend a MySQL Managed Database from your account, releasing idle resources and
 
 ```sql
 EXEC linode.databases.mysql_instances.suspend_databases_mysql_instance 
+
 ;
 ```
 </TabItem>

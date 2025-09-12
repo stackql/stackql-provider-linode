@@ -228,7 +228,8 @@ rules,
 status,
 tags,
 updated
-FROM linode.networking.firewalls;
+FROM linode.networking.firewalls
+;
 ```
 </TabItem>
 <TabItem value="get_firewalls">
@@ -243,7 +244,8 @@ pages,
 results
 FROM linode.networking.firewalls
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -269,8 +271,8 @@ data__rules,
 data__tags
 )
 SELECT 
-'{{ label }}' --required,
-'{{ rules }}' --required,
+'{{ label }}' /* required */,
+'{{ rules }}' /* required */,
 '{{ tags }}'
 RETURNING
 id,
@@ -339,8 +341,6 @@ SET
 data__label = '{{ label }}',
 data__status = '{{ status }}',
 data__tags = '{{ tags }}'
-WHERE 
-
 RETURNING
 id,
 created,
@@ -367,7 +367,8 @@ updated;
 Delete a firewall. This also removes all of the firewall's rules from any services the firewall was assigned to.<br /><br />- Assigned Linodes must not have any ongoing live migrations.<br /><br />- A `firewall_delete` event is generated when this operation returns successfully.<br /><br />- An assigned default firewall can't be deleted.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.networking.firewalls;
+DELETE FROM linode.networking.firewalls
+;
 ```
 </TabItem>
 </Tabs>

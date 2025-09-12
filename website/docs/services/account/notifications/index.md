@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.account.notifications;
+FROM linode.account.notifications
+;
 ```
 </TabItem>
 </Tabs>

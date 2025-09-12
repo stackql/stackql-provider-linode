@@ -255,7 +255,8 @@ tags,
 taints,
 type,
 update_strategy
-FROM linode.lke.node_pools;
+FROM linode.lke.node_pools
+;
 ```
 </TabItem>
 <TabItem value="get_lke_cluster_pools">
@@ -268,7 +269,8 @@ data,
 page,
 pages,
 results
-FROM linode.lke.node_pools;
+FROM linode.lke.node_pools
+;
 ```
 </TabItem>
 </Tabs>
@@ -301,13 +303,13 @@ data__update_strategy
 )
 SELECT 
 '{{ autoscaler }}',
-{{ count }} --required,
+{{ count }} /* required */,
 '{{ disks }}',
 '{{ k8s_version }}',
 '{{ labels }}',
 '{{ tags }}',
 '{{ taints }}',
-'{{ type }}' --required,
+'{{ type }}' /* required */,
 '{{ update_strategy }}'
 RETURNING
 id,
@@ -442,8 +444,6 @@ data__autoscaler = '{{ autoscaler }}',
 data__count = {{ count }},
 data__labels = '{{ labels }}',
 data__taints = '{{ taints }}'
-WHERE 
-
 RETURNING
 id,
 autoscaler,
@@ -475,7 +475,8 @@ update_strategy;
 Delete a specific Node Pool from a Kubernetes cluster.<br /><br />__Deleting a Node Pool is a destructive action and cannot be undone.__<br /><br />Deleting a Node Pool will delete all Linodes within that Pool.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.lke.node_pools;
+DELETE FROM linode.lke.node_pools
+;
 ```
 </TabItem>
 </Tabs>
@@ -495,6 +496,7 @@ Recycles a Node Pool for the designated Kubernetes Cluster. All Linodes within t
 
 ```sql
 EXEC linode.lke.node_pools.post_lke_cluster_pool_recycle 
+
 ;
 ```
 </TabItem>

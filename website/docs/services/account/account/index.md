@@ -244,7 +244,8 @@ euuid,
 phone,
 state,
 zip
-FROM linode.account.account;
+FROM linode.account.account
+;
 ```
 </TabItem>
 </Tabs>
@@ -277,8 +278,6 @@ data__phone = '{{ phone }}',
 data__state = '{{ state }}',
 data__tax_id = '{{ tax_id }}',
 data__zip = '{{ zip }}'
-WHERE 
-
 RETURNING
 tax_id,
 first_name,
@@ -322,7 +321,8 @@ EXEC linode.account.account.post_cancel_account
 @@json=
 '{
 "comments": "{{ comments }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

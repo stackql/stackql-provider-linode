@@ -189,7 +189,8 @@ id,
 created,
 entity,
 services
-FROM linode.managed.issues;
+FROM linode.managed.issues
+;
 ```
 </TabItem>
 <TabItem value="get_managed_issues">
@@ -204,7 +205,8 @@ pages,
 results
 FROM linode.managed.issues
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

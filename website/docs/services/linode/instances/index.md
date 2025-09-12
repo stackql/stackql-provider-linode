@@ -405,7 +405,8 @@ tags,
 type,
 updated,
 watchdog_enabled
-FROM linode.linode.instances;
+FROM linode.linode.instances
+;
 ```
 </TabItem>
 <TabItem value="get_linode_instances">
@@ -421,7 +422,8 @@ results
 FROM linode.linode.instances
 WHERE X-Filter = '{{ X-Filter }}'
 AND page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -486,10 +488,10 @@ SELECT
 {{ network_helper }},
 '{{ placement_group }}',
 {{ private_ip }},
-'{{ region }}' --required,
+'{{ region }}' /* required */,
 {{ swap_size }},
 '{{ tags }}',
-'{{ type }}' --required
+'{{ type }}' /* required */
 RETURNING
 id,
 lke_cluster_id,
@@ -701,8 +703,6 @@ data__group = '{{ group }}',
 data__label = '{{ label }}',
 data__tags = '{{ tags }}',
 data__watchdog_enabled = {{ watchdog_enabled }}
-WHERE 
-
 RETURNING
 id,
 lke_cluster_id,
@@ -746,7 +746,8 @@ watchdog_enabled;
 Deletes a Linode you have permission to `read_write`.<br /><br />__Deleting a Linode is a destructive action and cannot be undone.__<br /><br />Additionally, deleting a Linode:<br /><br />  - Gives up any IP addresses the Linode was assigned.<br />  - Deletes all Disks, Backups, Configs, etc.<br />  - Detaches any Volumes associated with the Linode.<br />  - Stops billing for the Linode and its associated services. You will be billed for time used within the billing period the Linode was active.<br /><br />Linodes that are in the process of [cloning](https://techdocs.akamai.com/linode-api/reference/post-clone-linode-instance) or [backup restoration](https://techdocs.akamai.com/linode-api/reference/post-restore-backup) cannot be deleted.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.linode.instances;
+DELETE FROM linode.linode.instances
+;
 ```
 </TabItem>
 </Tabs>
@@ -778,7 +779,8 @@ EXEC linode.linode.instances.post_boot_linode_instance
 @@json=
 '{
 "config_id": {{ config_id }}
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_clone_linode_instance">
@@ -800,7 +802,8 @@ EXEC linode.linode.instances.post_clone_linode_instance
 "private_ip": {{ private_ip }}, 
 "region": "{{ region }}", 
 "type": "{{ type }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_migrate_linode_instance">
@@ -815,7 +818,8 @@ EXEC linode.linode.instances.post_migrate_linode_instance
 "region": "{{ region }}", 
 "type": "{{ type }}", 
 "upgrade": {{ upgrade }}
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_mutate_linode_instance">
@@ -827,7 +831,8 @@ EXEC linode.linode.instances.post_mutate_linode_instance
 @@json=
 '{
 "allow_auto_disk_resize": {{ allow_auto_disk_resize }}
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_reset_linode_password">
@@ -839,7 +844,8 @@ EXEC linode.linode.instances.post_reset_linode_password
 @@json=
 '{
 "root_pass": "{{ root_pass }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_reboot_linode_instance">
@@ -851,7 +857,8 @@ EXEC linode.linode.instances.post_reboot_linode_instance
 @@json=
 '{
 "config_id": {{ config_id }}
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_rebuild_linode_instance">
@@ -872,7 +879,8 @@ EXEC linode.linode.instances.post_rebuild_linode_instance
 "stackscript_data": "{{ stackscript_data }}", 
 "stackscript_id": {{ stackscript_id }}, 
 "type": "{{ type }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_rescue_linode_instance">
@@ -884,7 +892,8 @@ EXEC linode.linode.instances.post_rescue_linode_instance
 @@json=
 '{
 "devices": "{{ devices }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_resize_linode_instance">
@@ -898,7 +907,8 @@ EXEC linode.linode.instances.post_resize_linode_instance
 "allow_auto_disk_resize": {{ allow_auto_disk_resize }}, 
 "migration_type": "{{ migration_type }}", 
 "type": "{{ type }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_shutdown_linode_instance">
@@ -907,6 +917,7 @@ Shuts down a Linode you have permission to modify. If any actions are currently 
 
 ```sql
 EXEC linode.linode.instances.post_shutdown_linode_instance 
+
 ;
 ```
 </TabItem>

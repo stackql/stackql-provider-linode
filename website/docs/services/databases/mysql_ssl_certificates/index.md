@@ -116,7 +116,8 @@ Display the SSL CA certificate for an accessible MySQL Managed Database. The dat
 ```sql
 SELECT
 ca_certificate
-FROM linode.databases.mysql_ssl_certificates;
+FROM linode.databases.mysql_ssl_certificates
+;
 ```
 </TabItem>
 </Tabs>

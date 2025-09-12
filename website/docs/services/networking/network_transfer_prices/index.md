@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.networking.network_transfer_prices;
+FROM linode.networking.network_transfer_prices
+;
 ```
 </TabItem>
 </Tabs>

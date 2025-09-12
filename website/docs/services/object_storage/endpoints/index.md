@@ -128,7 +128,8 @@ SELECT
 endpoint_type,
 region,
 s3_endpoint
-FROM linode.object_storage.endpoints;
+FROM linode.object_storage.endpoints
+;
 ```
 </TabItem>
 </Tabs>

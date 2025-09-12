@@ -210,7 +210,8 @@ id,
 created,
 label,
 ssh_key
-FROM linode.profile.ssh_keys;
+FROM linode.profile.ssh_keys
+;
 ```
 </TabItem>
 <TabItem value="get_ssh_keys">
@@ -225,7 +226,8 @@ pages,
 results
 FROM linode.profile.ssh_keys
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -305,8 +307,6 @@ Updates an SSH Key that you have permission to `read_write`.<br /><br />Only SSH
 REPLACE linode.profile.ssh_keys
 SET 
 data__label = '{{ label }}'
-WHERE 
-
 RETURNING
 id,
 created,
@@ -330,7 +330,8 @@ ssh_key;
 Deletes an SSH Key you have access to.<br /><br />&gt; 📘<br />&gt;<br />&gt; This operation only deletes a key's association from your profile. It doesn't remove it from any Linode or disk that was deployed with `authorized_keys`. You need to manually delete the key on the Linode or disk.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.profile.ssh_keys;
+DELETE FROM linode.profile.ssh_keys
+;
 ```
 </TabItem>
 </Tabs>

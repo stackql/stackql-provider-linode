@@ -257,7 +257,8 @@ region,
 tags,
 tier,
 updated
-FROM linode.lke.clusters;
+FROM linode.lke.clusters
+;
 ```
 </TabItem>
 <TabItem value="get_lke_clusters">
@@ -270,7 +271,8 @@ data,
 page,
 pages,
 results
-FROM linode.lke.clusters;
+FROM linode.lke.clusters
+;
 ```
 </TabItem>
 </Tabs>
@@ -303,10 +305,10 @@ data__tier
 SELECT 
 {{ apl_enabled }},
 '{{ control_plane }}',
-'{{ k8s_version }}' --required,
-'{{ label }}' --required,
-'{{ node_pools }}' --required,
-'{{ region }}' --required,
+'{{ k8s_version }}' /* required */,
+'{{ label }}' /* required */,
+'{{ node_pools }}' /* required */,
+'{{ region }}' /* required */,
 '{{ tags }}',
 '{{ tier }}'
 RETURNING
@@ -401,8 +403,6 @@ data__control_plane = '{{ control_plane }}',
 data__k8s_version = '{{ k8s_version }}',
 data__label = '{{ label }}',
 data__tags = '{{ tags }}'
-WHERE 
-
 RETURNING
 created,
 k8s_version,
@@ -428,7 +428,8 @@ updated;
 Deletes a Cluster you have permission to `read_write`.<br /><br />__Deleting a Cluster is a destructive action and cannot be undone.__<br /><br />Deleting a Cluster:<br /><br />- Deletes all Linodes in all pools within this Kubernetes cluster<br />- Deletes all supporting Kubernetes services for this Kubernetes cluster (API server, etcd, etc)<br />- Deletes all NodeBalancers created by this Kubernetes cluster<br />- Does not delete any of the volumes created by this Kubernetes cluster<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.lke.clusters;
+DELETE FROM linode.lke.clusters
+;
 ```
 </TabItem>
 </Tabs>
@@ -450,6 +451,7 @@ Recycles all nodes in all pools of a designated Kubernetes Cluster. All Linodes 
 
 ```sql
 EXEC linode.lke.clusters.post_lke_cluster_recycle 
+
 ;
 ```
 </TabItem>
@@ -463,7 +465,8 @@ EXEC linode.lke.clusters.post_lke_cluster_regenerate
 '{
 "kubeconfig": {{ kubeconfig }}, 
 "servicetoken": {{ servicetoken }}
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="delete_lke_service_token">
@@ -472,6 +475,7 @@ Delete and regenerate the service account token for a Cluster.<br /><br />&gt; ð
 
 ```sql
 EXEC linode.lke.clusters.delete_lke_service_token 
+
 ;
 ```
 </TabItem>

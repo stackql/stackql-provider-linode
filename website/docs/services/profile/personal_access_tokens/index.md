@@ -212,7 +212,8 @@ expiry,
 label,
 scopes,
 token
-FROM linode.profile.personal_access_tokens;
+FROM linode.profile.personal_access_tokens
+;
 ```
 </TabItem>
 <TabItem value="get_personal_access_tokens">
@@ -225,7 +226,8 @@ data,
 page,
 pages,
 results
-FROM linode.profile.personal_access_tokens;
+FROM linode.profile.personal_access_tokens
+;
 ```
 </TabItem>
 </Tabs>
@@ -312,8 +314,6 @@ Updates a Personal Access Token.<br /><br />[Learn more...](https://techdocs.aka
 REPLACE linode.profile.personal_access_tokens
 SET 
 data__label = '{{ label }}'
-WHERE 
-
 RETURNING
 id,
 created,
@@ -339,7 +339,8 @@ token;
 Revokes a Personal Access Token. The token will be invalidated immediately, and requests using that token will fail with a 401. It is possible to revoke access to the token making the request to revoke a token, but keep in mind that doing so could lose you access to the api and require you to create a new token through some other means.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.profile.personal_access_tokens;
+DELETE FROM linode.profile.personal_access_tokens
+;
 ```
 </TabItem>
 </Tabs>

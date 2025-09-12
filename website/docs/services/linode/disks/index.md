@@ -255,7 +255,8 @@ label,
 size,
 status,
 updated
-FROM linode.linode.disks;
+FROM linode.linode.disks
+;
 ```
 </TabItem>
 <TabItem value="get_linode_disks">
@@ -270,7 +271,8 @@ pages,
 results
 FROM linode.linode.disks
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -308,7 +310,7 @@ SELECT
 '{{ image }}',
 '{{ label }}',
 '{{ root_pass }}',
-{{ size }} --required,
+{{ size }} /* required */,
 '{{ stackscript_data }}',
 {{ stackscript_id }}
 RETURNING
@@ -412,8 +414,6 @@ Updates a Disk that you have permission to `read_write`.<br /><br />[Learn more.
 REPLACE linode.linode.disks
 SET 
 data__label = '{{ label }}'
-WHERE 
-
 RETURNING
 id,
 created,
@@ -441,7 +441,8 @@ updated;
 Deletes a Disk you have permission to `read_write`.<br /><br />__Deleting a Disk is a destructive action and cannot be undone.__<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.linode.disks;
+DELETE FROM linode.linode.disks
+;
 ```
 </TabItem>
 </Tabs>
@@ -463,6 +464,7 @@ Copies a disk, byte-for-byte, into a new disk on the same Linode. The operation 
 
 ```sql
 EXEC linode.linode.disks.post_clone_linode_disk 
+
 ;
 ```
 </TabItem>
@@ -475,7 +477,8 @@ EXEC linode.linode.disks.post_reset_disk_password
 @@json=
 '{
 "password": "{{ password }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_resize_disk">
@@ -487,7 +490,8 @@ EXEC linode.linode.disks.post_resize_disk
 @@json=
 '{
 "size": {{ size }}
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

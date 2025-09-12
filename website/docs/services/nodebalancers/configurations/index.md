@@ -174,7 +174,8 @@ Returns configuration information for a single port of this NodeBalancer.<br /><
 ```sql
 SELECT
 *
-FROM linode.nodebalancers.configurations;
+FROM linode.nodebalancers.configurations
+;
 ```
 </TabItem>
 <TabItem value="get_node_balancer_configs">
@@ -186,7 +187,8 @@ SELECT
 *
 FROM linode.nodebalancers.configurations
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -210,7 +212,7 @@ INSERT INTO linode.nodebalancers.configurations (
 data__nodes
 )
 SELECT 
-'{{ nodes }}' --required
+'{{ nodes }}' /* required */
 ;
 ```
 </TabItem>
@@ -251,9 +253,7 @@ Updates the configuration for a single port on a NodeBalancer.<br /><br />&gt; ð
 ```sql
 REPLACE linode.nodebalancers.configurations
 SET 
--- No updatable properties
-WHERE 
-;
+-- No updatable properties;
 ```
 </TabItem>
 </Tabs>
@@ -272,7 +272,8 @@ WHERE
 Deletes the Config for a port of this NodeBalancer.<br /><br />__This cannot be undone.__<br /><br />Once completed, this NodeBalancer will no longer respond to requests on the given port. This also deletes all associated NodeBalancerNodes, but the Linodes they were routing traffic to will be unchanged and will not be removed.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.nodebalancers.configurations;
+DELETE FROM linode.nodebalancers.configurations
+;
 ```
 </TabItem>
 </Tabs>
@@ -295,7 +296,8 @@ EXEC linode.nodebalancers.configurations.post_rebuild_node_balancer_config
 @@json=
 '{
 "nodes": "{{ nodes }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

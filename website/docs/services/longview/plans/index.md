@@ -141,7 +141,8 @@ id,
 clients_included,
 label,
 price
-FROM linode.longview.plans;
+FROM linode.longview.plans
+;
 ```
 </TabItem>
 </Tabs>
@@ -163,8 +164,6 @@ Update your Longview plan to that of the given subscription ID. This returns a `
 REPLACE linode.longview.plans
 SET 
 data__longview_subscription = '{{ longview_subscription }}'
-WHERE 
-
 RETURNING
 id,
 clients_included,

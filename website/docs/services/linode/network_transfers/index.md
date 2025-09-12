@@ -128,7 +128,8 @@ SELECT
 billable,
 quota,
 used
-FROM linode.linode.network_transfers;
+FROM linode.linode.network_transfers
+;
 ```
 </TabItem>
 </Tabs>

@@ -154,7 +154,8 @@ page,
 pages,
 results
 FROM linode.monitor.metrics
-WHERE X-Filter = '{{ X-Filter }}';
+WHERE X-Filter = '{{ X-Filter }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -175,6 +176,7 @@ __Beta__ Returns metrics information for the individual entities within a specif
 
 ```sql
 EXEC linode.monitor.metrics.post_read_metric 
+
 ;
 ```
 </TabItem>
@@ -187,7 +189,8 @@ EXEC linode.monitor.metrics.post_get_token
 @@json=
 '{
 "entity_ids": "{{ entity_ids }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

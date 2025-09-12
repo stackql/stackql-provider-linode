@@ -214,7 +214,8 @@ label,
 scopes,
 thumbnail_url,
 website
-FROM linode.profile.apps;
+FROM linode.profile.apps
+;
 ```
 </TabItem>
 <TabItem value="get_profile_apps">
@@ -229,7 +230,8 @@ pages,
 results
 FROM linode.profile.apps
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -248,7 +250,8 @@ AND page_size = '{{ page_size }}';
 Expires this app token. This token may no longer be used to access your Account.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.profile.apps;
+DELETE FROM linode.profile.apps
+;
 ```
 </TabItem>
 </Tabs>

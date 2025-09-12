@@ -233,7 +233,8 @@ label,
 status,
 type,
 updated
-FROM linode.linode.backups;
+FROM linode.linode.backups
+;
 ```
 </TabItem>
 <TabItem value="get_backups">
@@ -244,7 +245,8 @@ Returns information about this Linode's available backups.<br /><br />[Learn mor
 SELECT
 automatic,
 snapshot
-FROM linode.linode.backups;
+FROM linode.linode.backups
+;
 ```
 </TabItem>
 </Tabs>
@@ -268,7 +270,7 @@ INSERT INTO linode.linode.backups (
 data__label
 )
 SELECT 
-'{{ label }}' --required
+'{{ label }}' /* required */
 RETURNING
 id,
 available,
@@ -315,6 +317,7 @@ Cancels the Backup service on the given Linode. Deletes all of this Linode's exi
 
 ```sql
 EXEC linode.linode.backups.post_cancel_backups 
+
 ;
 ```
 </TabItem>
@@ -324,6 +327,7 @@ Enables backups for the specified Linode.<br /><br />&gt; 📘<br />&gt;<br />&g
 
 ```sql
 EXEC linode.linode.backups.post_enable_backups 
+
 ;
 ```
 </TabItem>
@@ -337,7 +341,8 @@ EXEC linode.linode.backups.post_restore_backup
 '{
 "linode_id": {{ linode_id }}, 
 "overwrite": {{ overwrite }}
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

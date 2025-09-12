@@ -160,7 +160,8 @@ pages,
 results
 FROM linode.linode.firewalls
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -210,6 +211,7 @@ Reapply assigned firewalls to a Linode in case they were not applied successfull
 
 ```sql
 EXEC linode.linode.firewalls.post_apply_firewalls 
+
 ;
 ```
 </TabItem>

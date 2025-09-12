@@ -187,7 +187,8 @@ Returns information about a single user on your account.<br /><br />&gt; 📘<br
 ```sql
 SELECT
 *
-FROM linode.account.users;
+FROM linode.account.users
+;
 ```
 </TabItem>
 <TabItem value="get_users">
@@ -202,7 +203,8 @@ pages,
 results
 FROM linode.account.users
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -228,9 +230,9 @@ data__restricted,
 data__username
 )
 SELECT 
-'{{ email }}' --required,
+'{{ email }}' /* required */,
 {{ restricted }},
-'{{ username }}' --required
+'{{ username }}' /* required */
 RETURNING
 email,
 last_login,
@@ -287,8 +289,6 @@ SET
 data__email = '{{ email }}',
 data__restricted = {{ restricted }},
 data__username = '{{ username }}'
-WHERE 
-
 RETURNING
 email,
 last_login,
@@ -317,7 +317,8 @@ verified_phone_number;
 Deletes a user. The API immediately logs the user out and removes all of its `grants`.<br /><br />&gt; 📘<br />&gt;<br />&gt; This operation can only be accessed by account users with _unrestricted_ access.<br /><br />__Parent and child accounts__<br /><br />In a [parent and child account](https://www.linode.com/docs/guides/parent-child-accounts/) environment, the following apply:<br /><br />- You can't delete a child account parent user (proxy user). The API returns a 403 error if you target a proxy user with this operation.<br /><br />- A parent account using an unrestricted proxy user can use this operation to delete a child account user.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.account.users;
+DELETE FROM linode.account.users
+;
 ```
 </TabItem>
 </Tabs>

@@ -153,7 +153,8 @@ public_interface,
 vpc_interface
 FROM linode.networking.firewall_settings
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -175,8 +176,6 @@ __Beta__ You can update or add a default firewall to:<br /><br />- Linodes using
 REPLACE linode.networking.firewall_settings
 SET 
 data__default_firewall_ids = '{{ default_firewall_ids }}'
-WHERE 
-
 RETURNING
 default_firewall_ids;
 ```

@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.nodebalancers.types;
+FROM linode.nodebalancers.types
+;
 ```
 </TabItem>
 </Tabs>

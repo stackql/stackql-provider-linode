@@ -224,7 +224,8 @@ memory,
 vcpus
 FROM linode.databases.types
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 <TabItem value="get_databases_types">
@@ -242,7 +243,8 @@ memory,
 vcpus
 FROM linode.databases.types
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

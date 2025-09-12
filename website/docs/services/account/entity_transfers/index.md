@@ -243,7 +243,8 @@ is_sender,
 status,
 token,
 updated
-FROM linode.account.entity_transfers;
+FROM linode.account.entity_transfers
+;
 ```
 </TabItem>
 <TabItem value="get_entity_transfers">
@@ -261,7 +262,8 @@ token,
 updated
 FROM linode.account.entity_transfers
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -285,7 +287,7 @@ INSERT INTO linode.account.entity_transfers (
 data__entities
 )
 SELECT 
-'{{ entities }}' --required
+'{{ entities }}' /* required */
 RETURNING
 created,
 entities,
@@ -326,7 +328,8 @@ updated
 __Deprecated__ Please run [Cancel a service transfer](https://techdocs.akamai.com/linode-api/reference/delete-service-transfer). __OAuth scopes__.<br /><br />    ```<br />    account:read_write<br />    ```<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.account.entity_transfers;
+DELETE FROM linode.account.entity_transfers
+;
 ```
 </TabItem>
 </Tabs>
@@ -346,6 +349,7 @@ __Deprecated__ Please run [Accept a service transfer](https://techdocs.akamai.co
 
 ```sql
 EXEC linode.account.entity_transfers.post_accept_entity_transfer 
+
 ;
 ```
 </TabItem>

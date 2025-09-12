@@ -187,7 +187,8 @@ Returns information about a single Node, a backend for this NodeBalancer's confi
 ```sql
 SELECT
 *
-FROM linode.nodebalancers.nodes;
+FROM linode.nodebalancers.nodes
+;
 ```
 </TabItem>
 <TabItem value="get_node_balancer_config_nodes">
@@ -202,7 +203,8 @@ pages,
 results
 FROM linode.nodebalancers.nodes
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -256,9 +258,7 @@ Updates information about a node, a backend for this NodeBalancer's configured p
 ```sql
 REPLACE linode.nodebalancers.nodes
 SET 
--- No updatable properties
-WHERE 
-;
+-- No updatable properties;
 ```
 </TabItem>
 </Tabs>
@@ -277,7 +277,8 @@ WHERE
 Deletes a Node from this Config. This backend will no longer receive traffic for the configured port of this NodeBalancer.<br /><br />This does not change or remove the Linode whose address was used in the creation of this Node.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.nodebalancers.nodes;
+DELETE FROM linode.nodebalancers.nodes
+;
 ```
 </TabItem>
 </Tabs>

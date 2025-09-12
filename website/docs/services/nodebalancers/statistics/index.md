@@ -122,7 +122,8 @@ Returns detailed statistics about the requested NodeBalancer. __OAuth scopes__.<
 SELECT
 data,
 title
-FROM linode.nodebalancers.statistics;
+FROM linode.nodebalancers.statistics
+;
 ```
 </TabItem>
 </Tabs>

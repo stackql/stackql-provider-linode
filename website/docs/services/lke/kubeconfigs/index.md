@@ -123,7 +123,8 @@ Get the Kubeconfig file for a Cluster. Please note that it often takes 2-5 minut
 ```sql
 SELECT
 kubeconfig
-FROM linode.lke.kubeconfigs;
+FROM linode.lke.kubeconfigs
+;
 ```
 </TabItem>
 </Tabs>
@@ -142,7 +143,8 @@ FROM linode.lke.kubeconfigs;
 Delete and regenerate the Kubeconfig file for a Cluster.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.lke.kubeconfigs;
+DELETE FROM linode.lke.kubeconfigs
+;
 ```
 </TabItem>
 </Tabs>

@@ -122,7 +122,8 @@ All advanced parameters you can apply to a MySQL Managed Database, via our partn
 SELECT
 binlog_retention_period,
 mysql
-FROM linode.databases.mysql_config;
+FROM linode.databases.mysql_config
+;
 ```
 </TabItem>
 </Tabs>

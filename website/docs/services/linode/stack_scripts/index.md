@@ -276,7 +276,8 @@ script,
 updated,
 user_defined_fields,
 username
-FROM linode.linode.stack_scripts;
+FROM linode.linode.stack_scripts
+;
 ```
 </TabItem>
 <TabItem value="get_stack_scripts">
@@ -291,7 +292,8 @@ pages,
 results
 FROM linode.linode.stack_scripts
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -321,11 +323,11 @@ data__script
 )
 SELECT 
 '{{ description }}',
-'{{ images }}' --required,
+'{{ images }}' /* required */,
 {{ is_public }},
-'{{ label }}' --required,
+'{{ label }}' /* required */,
 '{{ rev_note }}',
-'{{ script }}' --required
+'{{ script }}' /* required */
 RETURNING
 id,
 user_gravatar_id,
@@ -409,8 +411,6 @@ data__is_public = {{ is_public }},
 data__label = '{{ label }}',
 data__rev_note = '{{ rev_note }}',
 data__script = '{{ script }}'
-WHERE 
-
 RETURNING
 id,
 user_gravatar_id,
@@ -445,7 +445,8 @@ username;
 Deletes a private StackScript you have permission to `read_write`. You cannot delete a public StackScript.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.linode.stack_scripts;
+DELETE FROM linode.linode.stack_scripts
+;
 ```
 </TabItem>
 </Tabs>
