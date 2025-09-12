@@ -169,7 +169,8 @@ rules,
 status,
 tags,
 updated
-FROM linode.nodebalancers.firewalls;
+FROM linode.nodebalancers.firewalls
+;
 ```
 </TabItem>
 </Tabs>

@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.longview.types;
+FROM linode.longview.types
+;
 ```
 </TabItem>
 </Tabs>

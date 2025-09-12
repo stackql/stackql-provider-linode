@@ -116,7 +116,8 @@ Display the SSL CA certificate for an accessible PostgreSQL Managed Database. Th
 ```sql
 SELECT
 ca_certificate
-FROM linode.databases.postgresql_ssl_certificates;
+FROM linode.databases.postgresql_ssl_certificates
+;
 ```
 </TabItem>
 </Tabs>

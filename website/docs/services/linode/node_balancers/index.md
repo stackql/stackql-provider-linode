@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.linode.node_balancers;
+FROM linode.linode.node_balancers
+;
 ```
 </TabItem>
 </Tabs>

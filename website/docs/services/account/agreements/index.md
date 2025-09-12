@@ -141,7 +141,8 @@ billing_agreement,
 eu_model,
 master_service_agreement,
 privacy_policy
-FROM linode.account.agreements;
+FROM linode.account.agreements
+;
 ```
 </TabItem>
 </Tabs>
@@ -167,7 +168,8 @@ EXEC linode.account.agreements.post_account_agreements
 "eu_model": {{ eu_model }}, 
 "master_service_agreement": {{ master_service_agreement }}, 
 "privacy_policy": {{ privacy_policy }}
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

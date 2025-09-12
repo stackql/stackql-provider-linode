@@ -130,7 +130,8 @@ Returns a boolean value indicating if this bucket has a corresponding TLS/SSL ce
 ```sql
 SELECT
 ssl
-FROM linode.object_storage.ssl_certificates;
+FROM linode.object_storage.ssl_certificates
+;
 ```
 </TabItem>
 </Tabs>
@@ -155,8 +156,8 @@ data__certificate,
 data__private_key
 )
 SELECT 
-'{{ certificate }}' --required,
-'{{ private_key }}' --required
+'{{ certificate }}' /* required */,
+'{{ private_key }}' /* required */
 RETURNING
 ssl
 ;
@@ -200,7 +201,8 @@ Line breaks must be represented as `\n` in the string for requests (but not when
 Deletes this Object Storage bucket's user uploaded TLS/SSL certificate and private key.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.object_storage.ssl_certificates;
+DELETE FROM linode.object_storage.ssl_certificates
+;
 ```
 </TabItem>
 </Tabs>

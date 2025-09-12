@@ -168,7 +168,8 @@ SELECT
 available,
 plan,
 region
-FROM linode.regions.availability;
+FROM linode.regions.availability
+;
 ```
 </TabItem>
 <TabItem value="get_regions_availability">
@@ -180,7 +181,8 @@ SELECT
 available,
 plan,
 region
-FROM linode.regions.availability;
+FROM linode.regions.availability
+;
 ```
 </TabItem>
 </Tabs>

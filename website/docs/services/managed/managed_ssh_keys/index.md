@@ -116,7 +116,8 @@ Returns the unique SSH public key assigned to your Linode account's Managed serv
 ```sql
 SELECT
 ssh_key
-FROM linode.managed.managed_ssh_keys;
+FROM linode.managed.managed_ssh_keys
+;
 ```
 </TabItem>
 </Tabs>

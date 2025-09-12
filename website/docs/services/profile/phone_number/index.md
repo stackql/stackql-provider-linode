@@ -102,7 +102,8 @@ Parameters can be passed in the `WHERE` clause of a query. Check the [Methods](#
 Delete the verified phone number for the User making this request.<br /><br />Use this operation to opt out of SMS messages for the requesting User after a phone number has been verified with the [Verify a phone number](https://techdocs.akamai.com/linode-api/reference/post-profile-phone-number-verify) operation.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.profile.phone_number;
+DELETE FROM linode.profile.phone_number
+;
 ```
 </TabItem>
 </Tabs>
@@ -127,7 +128,8 @@ EXEC linode.profile.phone_number.post_profile_phone_number
 '{
 "iso_code": "{{ iso_code }}", 
 "phone_number": "{{ phone_number }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_profile_phone_number_verify">
@@ -139,7 +141,8 @@ EXEC linode.profile.phone_number.post_profile_phone_number_verify
 @@json=
 '{
 "otp_code": "{{ otp_code }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

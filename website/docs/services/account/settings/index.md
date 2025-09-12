@@ -160,7 +160,8 @@ longview_subscription,
 managed,
 network_helper,
 object_storage
-FROM linode.account.settings;
+FROM linode.account.settings
+;
 ```
 </TabItem>
 </Tabs>
@@ -184,8 +185,6 @@ SET
 data__backups_enabled = {{ backups_enabled }},
 data__interfaces_for_new_linodes = '{{ interfaces_for_new_linodes }}',
 data__network_helper = {{ network_helper }}
-WHERE 
-
 RETURNING
 backups_enabled,
 interfaces_for_new_linodes,
@@ -212,6 +211,7 @@ Enables Linode Managed for the entire account and sends a welcome email to the a
 
 ```sql
 EXEC linode.account.settings.post_enable_account_managed 
+
 ;
 ```
 </TabItem>

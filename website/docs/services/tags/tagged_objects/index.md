@@ -146,7 +146,8 @@ pages,
 results
 FROM linode.tags.tagged_objects
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

@@ -158,7 +158,8 @@ disk,
 net_in,
 net_out,
 swap
-FROM linode.managed.statistics;
+FROM linode.managed.statistics
+;
 ```
 </TabItem>
 </Tabs>

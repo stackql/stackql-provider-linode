@@ -209,7 +209,8 @@ linodes,
 prefix,
 range,
 region
-FROM linode.networking.ipv6_ranges;
+FROM linode.networking.ipv6_ranges
+;
 ```
 </TabItem>
 <TabItem value="get_ipv6_ranges">
@@ -224,7 +225,8 @@ pages,
 results
 FROM linode.networking.ipv6_ranges
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -251,7 +253,7 @@ data__route_target
 )
 SELECT 
 {{ linode_id }},
-{{ prefix_length }} --required,
+{{ prefix_length }} /* required */,
 '{{ route_target }}'
 RETURNING
 range,
@@ -311,7 +313,8 @@ route_target
 Removes this IPv6 range from your account and disconnects the range from any assigned Linodes.<br /><br />&gt; 📘<br />&gt;<br />&gt; You can't delete shared IPv6 ranges. Contact Customer Support for assistance.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.networking.ipv6_ranges;
+DELETE FROM linode.networking.ipv6_ranges
+;
 ```
 </TabItem>
 </Tabs>

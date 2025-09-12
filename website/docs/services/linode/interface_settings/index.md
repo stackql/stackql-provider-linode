@@ -129,7 +129,8 @@ __Beta__ Lists a Linode's interface settings, including Network Helper and defau
 SELECT
 default_route,
 network_helper
-FROM linode.linode.interface_settings;
+FROM linode.linode.interface_settings
+;
 ```
 </TabItem>
 </Tabs>
@@ -152,8 +153,6 @@ REPLACE linode.linode.interface_settings
 SET 
 data__default_route = '{{ default_route }}',
 data__network_helper = {{ network_helper }}
-WHERE 
-
 RETURNING
 default_route,
 network_helper;

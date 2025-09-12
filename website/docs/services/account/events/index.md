@@ -256,7 +256,8 @@ seen,
 status,
 time_remaining,
 username
-FROM linode.account.events;
+FROM linode.account.events
+;
 ```
 </TabItem>
 <TabItem value="get_events">
@@ -271,7 +272,8 @@ pages,
 results
 FROM linode.account.events
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -291,6 +293,7 @@ Acknowledge an event by marking it as seen.<br /><br />&gt; 📘<br />&gt;<br />
 
 ```sql
 EXEC linode.account.events.post_event_seen 
+
 ;
 ```
 </TabItem>

@@ -129,7 +129,8 @@ Display the root username and password for an accessible MySQL Managed Database.
 SELECT
 password,
 username
-FROM linode.databases.mysql_instance_credentials;
+FROM linode.databases.mysql_instance_credentials
+;
 ```
 </TabItem>
 </Tabs>
@@ -149,6 +150,7 @@ Reset the root password for a MySQL Managed Database. A new root password is ran
 
 ```sql
 EXEC linode.databases.mysql_instance_credentials.post_databases_mysql_instance_credentials_reset 
+
 ;
 ```
 </TabItem>

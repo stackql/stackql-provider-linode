@@ -275,7 +275,8 @@ objects,
 region,
 s3_endpoint,
 size
-FROM linode.object_storage.buckets;
+FROM linode.object_storage.buckets
+;
 ```
 </TabItem>
 <TabItem value="get_object_storage_bucketin_cluster">
@@ -288,7 +289,8 @@ data,
 page,
 pages,
 results
-FROM linode.object_storage.buckets;
+FROM linode.object_storage.buckets
+;
 ```
 </TabItem>
 <TabItem value="get_object_storage_buckets">
@@ -301,7 +303,8 @@ data,
 page,
 pages,
 results
-FROM linode.object_storage.buckets;
+FROM linode.object_storage.buckets
+;
 ```
 </TabItem>
 </Tabs>
@@ -333,7 +336,7 @@ SELECT
 '{{ acl }}',
 {{ cors_enabled }},
 '{{ endpoint_type }}',
-'{{ label }}' --required,
+'{{ label }}' /* required */,
 '{{ region }}',
 '{{ s3_endpoint }}'
 RETURNING
@@ -415,7 +418,8 @@ size
 Removes a single bucket.<br /><br />&gt; 📘<br />&gt;<br />&gt; - You need to remove all objects from a bucket before you can delete it. While you can delete a bucket using the [CLI](https://www.linode.com/docs/products/storage/object-storage/guides/s3cmd/#delete-a-bucket), this operation fails if the bucket contains too many objects. The best way to empty large buckets is to configure lifecycle policies with an outside API, such as the [Ceph Object Gateway S3 API](https://docs.ceph.com/en/latest/radosgw/bucketpolicy/#). Set a policy to remove all objects, wait a day or more for the system to remove all objects, then delete the bucket.<br />&gt;<br />&gt; - You can use an outside API, such as the [Ceph Object Gateway S3 API](https://docs.ceph.com/en/latest/radosgw/s3/bucketops/#delete-bucket) for more options. __OAuth scopes__.<br /><br />    ```<br />    object_storage:read_write<br />    ```<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.object_storage.buckets;
+DELETE FROM linode.object_storage.buckets
+;
 ```
 </TabItem>
 </Tabs>
@@ -441,7 +445,8 @@ EXEC linode.object_storage.buckets.post_object_storage_object_url
 "expires_in": {{ expires_in }}, 
 "method": "{{ method }}", 
 "name": "{{ name }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

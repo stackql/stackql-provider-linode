@@ -252,7 +252,8 @@ memory_limit,
 root_device,
 run_level,
 virt_mode
-FROM linode.linode.config_profiles;
+FROM linode.linode.config_profiles
+;
 ```
 </TabItem>
 <TabItem value="get_linode_configs">
@@ -267,7 +268,8 @@ pages,
 results
 FROM linode.linode.config_profiles
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -301,11 +303,11 @@ data__virt_mode
 )
 SELECT 
 '{{ comments }}',
-'{{ devices }}' --required,
+'{{ devices }}' /* required */,
 '{{ helpers }}',
 '{{ interfaces }}',
 '{{ kernel }}',
-'{{ label }}' --required,
+'{{ label }}' /* required */,
 {{ memory_limit }},
 '{{ root_device }}',
 '{{ run_level }}',
@@ -456,8 +458,6 @@ data__memory_limit = {{ memory_limit }},
 data__root_device = '{{ root_device }}',
 data__run_level = '{{ run_level }}',
 data__virt_mode = '{{ virt_mode }}'
-WHERE 
-
 RETURNING
 id,
 comments,
@@ -488,7 +488,8 @@ virt_mode;
 Deletes the specified configuration profile from the specified Linode.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.linode.config_profiles;
+DELETE FROM linode.linode.config_profiles
+;
 ```
 </TabItem>
 </Tabs>

@@ -209,7 +209,8 @@ two_factor_auth,
 uid,
 username,
 verified_phone_number
-FROM linode.profile.profile;
+FROM linode.profile.profile
+;
 ```
 </TabItem>
 </Tabs>
@@ -238,8 +239,6 @@ data__lish_auth_method = '{{ lish_auth_method }}',
 data__restricted = {{ restricted }},
 data__timezone = '{{ timezone }}',
 data__two_factor_auth = {{ two_factor_auth }}
-WHERE 
-
 RETURNING
 authentication_type,
 authorized_keys,
@@ -274,6 +273,7 @@ View a list of user preferences tied to the OAuth client that generated the toke
 
 ```sql
 EXEC linode.profile.profile.get_user_preferences 
+
 ;
 ```
 </TabItem>
@@ -283,6 +283,7 @@ Updates a user's preferences. These preferences are tied to the OAuth client tha
 
 ```sql
 EXEC linode.profile.profile.put_user_preferences 
+
 ;
 ```
 </TabItem>

@@ -228,7 +228,8 @@ created,
 install_code,
 label,
 updated
-FROM linode.longview.clients;
+FROM linode.longview.clients
+;
 ```
 </TabItem>
 <TabItem value="get_longview_clients">
@@ -243,7 +244,8 @@ pages,
 results
 FROM linode.longview.clients
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -311,8 +313,6 @@ Updates a Longview Client.  This cannot update how it monitors your server; use 
 REPLACE linode.longview.clients
 SET 
 data__label = '{{ label }}'
-WHERE 
-
 RETURNING
 id,
 api_key,
@@ -339,7 +339,8 @@ updated;
 Deletes a Longview Client from your Account.<br /><br />__All information stored for this client will be lost.__<br /><br />This _does not_ uninstall the Longview Client application for your Linode - you must do that manually.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.longview.clients;
+DELETE FROM linode.longview.clients
+;
 ```
 </TabItem>
 </Tabs>

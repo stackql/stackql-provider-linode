@@ -264,7 +264,8 @@ tags,
 transfer,
 type,
 updated
-FROM linode.nodebalancers.node_balancers;
+FROM linode.nodebalancers.node_balancers
+;
 ```
 </TabItem>
 <TabItem value="get_node_balancers">
@@ -279,7 +280,8 @@ pages,
 results
 FROM linode.nodebalancers.node_balancers
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -313,7 +315,7 @@ SELECT
 '{{ configs }}',
 {{ firewall_id }},
 '{{ label }}',
-'{{ region }}' --required,
+'{{ region }}' /* required */,
 '{{ tags }}',
 '{{ vpcs }}'
 RETURNING
@@ -400,8 +402,6 @@ SET
 data__client_conn_throttle = {{ client_conn_throttle }},
 data__label = '{{ label }}',
 data__tags = '{{ tags }}'
-WHERE 
-
 RETURNING
 id,
 client_conn_throttle,
@@ -434,7 +434,8 @@ updated;
 Deletes a NodeBalancer.<br /><br />__This is a destructive action and cannot be undone.__<br /><br />Deleting a NodeBalancer will also delete all associated Configs and Nodes, although the backend servers represented by the Nodes will not be changed or removed. Deleting a NodeBalancer will cause you to lose access to the IP Addresses assigned to this NodeBalancer.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.nodebalancers.node_balancers;
+DELETE FROM linode.nodebalancers.node_balancers
+;
 ```
 </TabItem>
 </Tabs>

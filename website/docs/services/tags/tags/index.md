@@ -160,7 +160,8 @@ pages,
 results
 FROM linode.tags.tags
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -189,7 +190,7 @@ data__volumes
 )
 SELECT 
 '{{ domains }}',
-'{{ label }}' --required,
+'{{ label }}' /* required */,
 '{{ linodes }}',
 '{{ nodebalancers }}',
 '{{ volumes }}'
@@ -247,7 +248,8 @@ label
 Removes a tag from all objects and deletes it.<br /><br />&gt; 📘<br />&gt;<br />&gt; This operation can only be accessed by account users with _unrestricted_ access.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.tags.tags;
+DELETE FROM linode.tags.tags
+;
 ```
 </TabItem>
 </Tabs>

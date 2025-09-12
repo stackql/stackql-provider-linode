@@ -232,7 +232,8 @@ region,
 subnet_mask,
 type,
 vpc_nat_1_1
-FROM linode.linode.ip_addresses;
+FROM linode.linode.ip_addresses
+;
 ```
 </TabItem>
 <TabItem value="get_linode_ips">
@@ -243,7 +244,8 @@ Returns networking information for a single Linode.<br /><br />&gt; 📘<br />&g
 SELECT
 ipv4,
 ipv6
-FROM linode.linode.ip_addresses;
+FROM linode.linode.ip_addresses
+;
 ```
 </TabItem>
 </Tabs>
@@ -268,8 +270,8 @@ data__public,
 data__type
 )
 SELECT 
-{{ public }} --required,
-'{{ type }}' --required
+{{ public }} /* required */,
+'{{ type }}' /* required */
 RETURNING
 interface_id,
 linode_id,
@@ -355,7 +357,8 @@ vpc_nat_1_1;
 Deletes a public or private IPv4 address associated with this Linode. This will fail if it is the Linode's last remaining public IPv4 address, or if the address has a 1:1 NAT with an active VPC Subnet address.<br /><br />&gt; 📘<br />&gt;<br />&gt; You can't use this operation to delete an IP assigned to a Linode interface. Run the [update the Linode interface](https://techdocs.akamai.com/linode-api/reference/put-linode-interface) operation instead.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.linode.ip_addresses;
+DELETE FROM linode.linode.ip_addresses
+;
 ```
 </TabItem>
 </Tabs>

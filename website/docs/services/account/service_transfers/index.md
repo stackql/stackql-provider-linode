@@ -228,7 +228,8 @@ is_sender,
 status,
 token,
 updated
-FROM linode.account.service_transfers;
+FROM linode.account.service_transfers
+;
 ```
 </TabItem>
 <TabItem value="get_service_transfers">
@@ -243,7 +244,8 @@ pages,
 results
 FROM linode.account.service_transfers
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -267,7 +269,7 @@ INSERT INTO linode.account.service_transfers (
 data__entities
 )
 SELECT 
-'{{ entities }}' --required
+'{{ entities }}' /* required */
 RETURNING
 created,
 entities,
@@ -308,7 +310,8 @@ updated
 Cancels the Service Transfer for the provided token. Once canceled, a transfer cannot be accepted or otherwise acted on in any way. If canceled in error, the transfer must be [created](https://techdocs.akamai.com/linode-api/reference/post-service-transfer) again.<br /><br />When canceled, an email notification for the cancellation is sent to the account that created this transfer. Transfers can not be canceled if they are expired or have been accepted.<br /><br />This operation can only be accessed by the unrestricted users of the account that created this transfer.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.account.service_transfers;
+DELETE FROM linode.account.service_transfers
+;
 ```
 </TabItem>
 </Tabs>
@@ -328,6 +331,7 @@ Accept a Service Transfer for the provided token to receive the services include
 
 ```sql
 EXEC linode.account.service_transfers.post_accept_service_transfer 
+
 ;
 ```
 </TabItem>

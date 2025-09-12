@@ -264,7 +264,8 @@ ttl_sec,
 type,
 updated,
 weight
-FROM linode.domains.records;
+FROM linode.domains.records
+;
 ```
 </TabItem>
 <TabItem value="get_domain_records">
@@ -279,7 +280,8 @@ pages,
 results
 FROM linode.domains.records
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -320,7 +322,7 @@ SELECT
 '{{ tag }}',
 '{{ target }}',
 {{ ttl_sec }},
-'{{ type }}' --required,
+'{{ type }}' /* required */,
 {{ weight }}
 RETURNING
 id,
@@ -481,8 +483,6 @@ data__tag = '{{ tag }}',
 data__target = '{{ target }}',
 data__ttl_sec = {{ ttl_sec }},
 data__weight = {{ weight }}
-WHERE 
-
 RETURNING
 id,
 name,
@@ -515,7 +515,8 @@ weight;
 Deletes a Record on this Domain.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.domains.records;
+DELETE FROM linode.domains.records
+;
 ```
 </TabItem>
 </Tabs>

@@ -284,7 +284,8 @@ status,
 tags,
 ttl_sec,
 type
-FROM linode.domains.domains;
+FROM linode.domains.domains
+;
 ```
 </TabItem>
 <TabItem value="get_domains">
@@ -299,7 +300,8 @@ pages,
 results
 FROM linode.domains.domains
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -337,7 +339,7 @@ data__type
 SELECT 
 '{{ axfr_ips }}',
 '{{ description }}',
-'{{ domain }}' --required,
+'{{ domain }}' /* required */,
 {{ expire_sec }},
 '{{ group }}',
 '{{ master_ips }}',
@@ -347,7 +349,7 @@ SELECT
 '{{ status }}',
 '{{ tags }}',
 {{ ttl_sec }},
-'{{ type }}' --required
+'{{ type }}' /* required */
 RETURNING
 id,
 axfr_ips,
@@ -505,8 +507,6 @@ data__status = '{{ status }}',
 data__tags = '{{ tags }}',
 data__ttl_sec = {{ ttl_sec }},
 data__type = '{{ type }}'
-WHERE 
-
 RETURNING
 id,
 axfr_ips,
@@ -540,7 +540,8 @@ type;
 Deletes a Domain from Linode's DNS Manager. The Domain will be removed from Linode's nameservers shortly after this operation completes. This also deletes all associated Domain Records.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.domains.domains;
+DELETE FROM linode.domains.domains
+;
 ```
 </TabItem>
 </Tabs>
@@ -565,7 +566,8 @@ EXEC linode.domains.domains.post_import_domain
 '{
 "domain": "{{ domain }}", 
 "remote_nameserver": "{{ remote_nameserver }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_clone_domain">
@@ -577,7 +579,8 @@ EXEC linode.domains.domains.post_clone_domain
 @@json=
 '{
 "domain": "{{ domain }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

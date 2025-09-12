@@ -308,7 +308,8 @@ total_size,
 type,
 updated,
 vendor
-FROM linode.images.images;
+FROM linode.images.images
+;
 ```
 </TabItem>
 <TabItem value="get_images">
@@ -323,7 +324,8 @@ pages,
 results
 FROM linode.images.images
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -353,7 +355,7 @@ data__tags
 SELECT 
 {{ cloud_init }},
 '{{ description }}',
-{{ disk_id }} --required,
+{{ disk_id }} /* required */,
 '{{ label }}',
 '{{ tags }}'
 RETURNING
@@ -432,8 +434,6 @@ SET
 data__description = '{{ description }}',
 data__label = '{{ label }}',
 data__tags = '{{ tags }}'
-WHERE 
-
 RETURNING
 id,
 capabilities,
@@ -471,7 +471,8 @@ vendor;
 Deletes a private image you have permission to `read_write`.<br /><br />&gt; 🚧<br />&gt;<br />&gt; - You can't undo this delete action.<br />&gt;<br />&gt; - When you delete an image, all [replicated instances](https://techdocs.akamai.com/linode-api/reference/post-replicate-image) of that image are also deleted.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.images.images;
+DELETE FROM linode.images.images
+;
 ```
 </TabItem>
 </Tabs>
@@ -499,7 +500,8 @@ EXEC linode.images.images.post_upload_image
 "label": "{{ label }}", 
 "region": "{{ region }}", 
 "tags": "{{ tags }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_replicate_image">
@@ -511,7 +513,8 @@ EXEC linode.images.images.post_replicate_image
 @@json=
 '{
 "regions": "{{ regions }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

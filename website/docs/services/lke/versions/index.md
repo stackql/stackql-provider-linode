@@ -167,7 +167,8 @@ View an LKE Kubernetes version available for deployment to a Kubernetes cluster 
 SELECT
 id,
 tier
-FROM linode.lke.versions;
+FROM linode.lke.versions
+;
 ```
 </TabItem>
 <TabItem value="get_lke_tiers_versions">
@@ -180,7 +181,8 @@ data,
 page,
 pages,
 results
-FROM linode.lke.versions;
+FROM linode.lke.versions
+;
 ```
 </TabItem>
 </Tabs>

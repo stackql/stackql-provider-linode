@@ -176,7 +176,8 @@ nodebalancer,
 stackscript,
 volume,
 vpc
-FROM linode.profile.grants;
+FROM linode.profile.grants
+;
 ```
 </TabItem>
 </Tabs>

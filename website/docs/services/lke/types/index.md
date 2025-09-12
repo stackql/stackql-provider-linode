@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.lke.types;
+FROM linode.lke.types
+;
 ```
 </TabItem>
 </Tabs>

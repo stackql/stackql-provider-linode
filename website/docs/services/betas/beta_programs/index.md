@@ -222,7 +222,8 @@ greenlight_only,
 label,
 more_info,
 started
-FROM linode.betas.beta_programs;
+FROM linode.betas.beta_programs
+;
 ```
 </TabItem>
 <TabItem value="get_beta_programs">
@@ -240,7 +241,8 @@ more_info,
 started
 FROM linode.betas.beta_programs
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>

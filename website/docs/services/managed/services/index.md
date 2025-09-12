@@ -268,7 +268,8 @@ service_type,
 status,
 timeout,
 updated
-FROM linode.managed.services;
+FROM linode.managed.services
+;
 ```
 </TabItem>
 <TabItem value="get_managed_services">
@@ -281,7 +282,8 @@ data,
 page,
 pages,
 results
-FROM linode.managed.services;
+FROM linode.managed.services
+;
 ```
 </TabItem>
 </Tabs>
@@ -313,15 +315,15 @@ data__service_type,
 data__timeout
 )
 SELECT 
-'{{ address }}' --required,
+'{{ address }}' /* required */,
 '{{ body }}',
 '{{ consultation_group }}',
 '{{ credentials }}',
-'{{ label }}' --required,
+'{{ label }}' /* required */,
 '{{ notes }}',
 '{{ region }}',
-'{{ service_type }}' --required,
-{{ timeout }} --required
+'{{ service_type }}' /* required */,
+{{ timeout }} /* required */
 RETURNING
 id,
 address,
@@ -420,8 +422,6 @@ data__notes = '{{ notes }}',
 data__region = '{{ region }}',
 data__service_type = '{{ service_type }}',
 data__timeout = {{ timeout }}
-WHERE 
-
 RETURNING
 id,
 address,
@@ -454,7 +454,8 @@ updated;
 Deletes a Managed Service.  This service will no longer be monitored by Linode Managed.<br /><br />This operation can only be accessed by the unrestricted users of an account.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.managed.services;
+DELETE FROM linode.managed.services
+;
 ```
 </TabItem>
 </Tabs>
@@ -475,6 +476,7 @@ Temporarily disables monitoring of a Managed Service.<br /><br />This operation 
 
 ```sql
 EXEC linode.managed.services.post_disable_managed_service 
+
 ;
 ```
 </TabItem>
@@ -484,6 +486,7 @@ Enables monitoring of a Managed Service.<br /><br />This operation can only be a
 
 ```sql
 EXEC linode.managed.services.post_enable_managed_service 
+
 ;
 ```
 </TabItem>

@@ -323,7 +323,8 @@ trigger_conditions,
 type,
 updated,
 updated_by
-FROM linode.monitor.alert_definitions;
+FROM linode.monitor.alert_definitions
+;
 ```
 </TabItem>
 <TabItem value="get_alert_definitions_for_service_type">
@@ -336,7 +337,8 @@ data,
 page,
 pages,
 results
-FROM linode.monitor.alert_definitions;
+FROM linode.monitor.alert_definitions
+;
 ```
 </TabItem>
 <TabItem value="get_alert_definitions">
@@ -349,7 +351,8 @@ data,
 page,
 pages,
 results
-FROM linode.monitor.alert_definitions;
+FROM linode.monitor.alert_definitions
+;
 ```
 </TabItem>
 </Tabs>
@@ -379,13 +382,13 @@ data__severity,
 data__trigger_conditions
 )
 SELECT 
-'{{ channel_ids }}' --required,
+'{{ channel_ids }}' /* required */,
 '{{ description }}',
 '{{ entity_ids }}',
-'{{ label }}' --required,
-'{{ rule_criteria }}' --required,
-{{ severity }} --required,
-'{{ trigger_conditions }}' --required
+'{{ label }}' /* required */,
+'{{ rule_criteria }}' /* required */,
+{{ severity }} /* required */,
+'{{ trigger_conditions }}' /* required */
 RETURNING
 id,
 alert_channels,
@@ -483,8 +486,6 @@ data__rule_criteria = '{{ rule_criteria }}',
 data__severity = {{ severity }},
 data__status = '{{ status }}',
 data__trigger_conditions = '{{ trigger_conditions }}'
-WHERE 
-
 RETURNING
 id,
 alert_channels,
@@ -521,7 +522,8 @@ updated_by;
 __Beta__ Delete a specific alert definition on your account. Include the appropriate `service_type` and `alert_id` as path parameters.<br /><br />&gt; 📘<br />&gt;<br />&gt; - This operation is beta. Call it using the `v4beta` path in its URL.<br />&gt;<br />&gt; - You need `read_only` access to the [scope](https://techdocs.akamai.com/linode-api/reference/get-started#oauth-reference) for the target `service_type`.<br />&gt;<br />&gt; - An [alert definition](https://techdocs.akamai.com/linode-api/reference/get-alert-definitions) with a `type` of `system` can't be deleted.<br />&gt;<br />&gt; - Currently, only the Managed Databases (`dbaas`) service type is supported.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.monitor.alert_definitions;
+DELETE FROM linode.monitor.alert_definitions
+;
 ```
 </TabItem>
 </Tabs>

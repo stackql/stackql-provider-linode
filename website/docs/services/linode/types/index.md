@@ -233,7 +233,8 @@ region_prices,
 successor,
 transfer,
 vcpus
-FROM linode.linode.types;
+FROM linode.linode.types
+;
 ```
 </TabItem>
 <TabItem value="get_linode_types">
@@ -246,7 +247,8 @@ data,
 page,
 pages,
 results
-FROM linode.linode.types;
+FROM linode.linode.types
+;
 ```
 </TabItem>
 </Tabs>

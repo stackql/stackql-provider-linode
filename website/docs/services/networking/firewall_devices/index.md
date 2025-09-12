@@ -203,7 +203,8 @@ id,
 created,
 entity,
 updated
-FROM linode.networking.firewall_devices;
+FROM linode.networking.firewall_devices
+;
 ```
 </TabItem>
 <TabItem value="get_firewall_devices">
@@ -218,7 +219,8 @@ pages,
 results
 FROM linode.networking.firewall_devices
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -243,8 +245,8 @@ data__id,
 data__type
 )
 SELECT 
-{{ id }} --required,
-'{{ type }}' --required
+{{ id }} /* required */,
+'{{ type }}' /* required */
 RETURNING
 id,
 created,
@@ -288,7 +290,8 @@ updated
 Removes a Firewall Device, which removes a Firewall from the service it was assigned to by the Device. This removes all of the Firewall's Rules from the service. If any other Firewalls have been assigned to the service, then those Rules remain in effect.<br /><br />- Assigned Linodes must not have any ongoing live migrations.<br /><br />- A `firewall_device_remove` Event is generated when the Firewall Device is removed successfully.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.networking.firewall_devices;
+DELETE FROM linode.networking.firewall_devices
+;
 ```
 </TabItem>
 </Tabs>

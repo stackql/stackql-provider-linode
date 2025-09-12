@@ -135,7 +135,8 @@ SELECT
 id,
 question,
 response
-FROM linode.profile.security_questions;
+FROM linode.profile.security_questions
+;
 ```
 </TabItem>
 </Tabs>
@@ -158,7 +159,8 @@ EXEC linode.profile.security_questions.post_security_questions
 @@json=
 '{
 "security_questions": "{{ security_questions }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

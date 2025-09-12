@@ -217,7 +217,8 @@ updated,
 version,
 vlan,
 vpc
-FROM linode.linode.interfaces;
+FROM linode.linode.interfaces
+;
 ```
 </TabItem>
 <TabItem value="get_linode_interfaces">
@@ -227,7 +228,8 @@ __Beta__ This operation returns all interfaces assigned to a specific Linode. Th
 ```sql
 SELECT
 *
-FROM linode.linode.interfaces;
+FROM linode.linode.interfaces
+;
 ```
 </TabItem>
 </Tabs>
@@ -281,9 +283,7 @@ __Beta__ Update the configuration of a Linode interface. __CLI: Public interface
 ```sql
 REPLACE linode.linode.interfaces
 SET 
--- No updatable properties
-WHERE 
-;
+-- No updatable properties;
 ```
 </TabItem>
 </Tabs>
@@ -302,7 +302,8 @@ WHERE
 __Beta__ Deletes a Linode interface on a specific Linode. To access this operation, you need the `read_write` [grant](https://techdocs.akamai.com/linode-api/reference/get-user-grants) for the Linode. You can't delete an active interface. First, you need to shut down the associated Linode.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.linode.interfaces;
+DELETE FROM linode.linode.interfaces
+;
 ```
 </TabItem>
 </Tabs>
@@ -326,7 +327,8 @@ EXEC linode.linode.interfaces.post_upgrade_linode_interfaces
 '{
 "config_id": {{ config_id }}, 
 "dry_run": {{ dry_run }}
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

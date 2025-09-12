@@ -249,7 +249,8 @@ redirect_uri,
 secret,
 status,
 thumbnail_url
-FROM linode.account.oauth_clients;
+FROM linode.account.oauth_clients
+;
 ```
 </TabItem>
 <TabItem value="get_clients">
@@ -264,7 +265,8 @@ pages,
 results
 FROM linode.account.oauth_clients
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -290,9 +292,9 @@ data__public,
 data__redirect_uri
 )
 SELECT 
-'{{ label }}' --required,
+'{{ label }}' /* required */,
 {{ public }},
-'{{ redirect_uri }}' --required
+'{{ redirect_uri }}' /* required */
 RETURNING
 id,
 label,
@@ -349,8 +351,6 @@ SET
 data__label = '{{ label }}',
 data__public = {{ public }},
 data__redirect_uri = '{{ redirect_uri }}'
-WHERE 
-
 RETURNING
 id,
 label,
@@ -377,7 +377,8 @@ thumbnail_url;
 Deletes an OAuth Client registered with Linode. The Client ID and Client secret will no longer be accepted by [login.linode.com](https://login.linode.com), and all tokens issued to this client will be invalidated (meaning that if your application was using a token, it will no longer work).<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.account.oauth_clients;
+DELETE FROM linode.account.oauth_clients
+;
 ```
 </TabItem>
 </Tabs>
@@ -399,6 +400,7 @@ Resets the OAuth Client secret for a client you own, and returns the OAuth Clien
 
 ```sql
 EXEC linode.account.oauth_clients.post_reset_client_secret 
+
 ;
 ```
 </TabItem>
@@ -408,6 +410,7 @@ Returns the PNG thumbnail for this OAuth Client.  This is a publicly viewable en
 
 ```sql
 EXEC linode.account.oauth_clients.get_client_thumbnail 
+
 ;
 ```
 </TabItem>
@@ -417,6 +420,7 @@ Upload a thumbnail for a client you own.  You must upload a PNG image file that 
 
 ```sql
 EXEC linode.account.oauth_clients.put_client_thumbnail 
+
 ;
 ```
 </TabItem>

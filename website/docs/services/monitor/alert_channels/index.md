@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.monitor.alert_channels;
+FROM linode.monitor.alert_channels
+;
 ```
 </TabItem>
 </Tabs>

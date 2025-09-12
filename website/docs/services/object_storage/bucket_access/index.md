@@ -148,7 +148,8 @@ acl,
 acl_xml,
 cors_enabled,
 cors_xml
-FROM linode.object_storage.bucket_access;
+FROM linode.object_storage.bucket_access
+;
 ```
 </TabItem>
 </Tabs>
@@ -216,9 +217,7 @@ Update basic cross-origin resource sharing (CORS) and [S3 canned access control 
 REPLACE linode.object_storage.bucket_access
 SET 
 data__acl = '{{ acl }}',
-data__cors_enabled = {{ cors_enabled }}
-WHERE 
-;
+data__cors_enabled = {{ cors_enabled }};
 ```
 </TabItem>
 </Tabs>

@@ -135,7 +135,8 @@ SELECT
 acl,
 acl_xml
 FROM linode.object_storage.acl_configurations
-WHERE name = '{{ name }}' -- required;
+WHERE name = '{{ name }}' -- required
+;
 ```
 </TabItem>
 </Tabs>

@@ -218,7 +218,8 @@ label,
 limited,
 regions,
 secret_key
-FROM linode.object_storage.keys;
+FROM linode.object_storage.keys
+;
 ```
 </TabItem>
 <TabItem value="get_object_storage_keys">
@@ -231,7 +232,8 @@ data,
 page,
 pages,
 results
-FROM linode.object_storage.keys;
+FROM linode.object_storage.keys
+;
 ```
 </TabItem>
 </Tabs>
@@ -295,8 +297,6 @@ REPLACE linode.object_storage.keys
 SET 
 data__label = '{{ label }}',
 data__regions = '{{ regions }}'
-WHERE 
-
 RETURNING
 id,
 access_key,
@@ -322,7 +322,8 @@ secret_key;
 Revokes an Object Storage Key. This key pair will no longer be usable by third-party clients. A successful request triggers an `obj_access_key_delete` [event](https://techdocs.akamai.com/linode-api/reference/get-events).<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.object_storage.keys;
+DELETE FROM linode.object_storage.keys
+;
 ```
 </TabItem>
 </Tabs>

@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.volumes.types;
+FROM linode.volumes.types
+;
 ```
 </TabItem>
 </Tabs>

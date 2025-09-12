@@ -212,7 +212,8 @@ endpoint_type,
 quota_limit,
 resource_metric,
 s3_endpoint
-FROM linode.object_storage.quotas;
+FROM linode.object_storage.quotas
+;
 ```
 </TabItem>
 <TabItem value="get_object_storage_quotas">
@@ -228,7 +229,8 @@ endpoint_type,
 quota_limit,
 resource_metric,
 s3_endpoint
-FROM linode.object_storage.quotas;
+FROM linode.object_storage.quotas
+;
 ```
 </TabItem>
 </Tabs>

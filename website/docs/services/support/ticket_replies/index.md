@@ -153,7 +153,8 @@ pages,
 results
 FROM linode.support.ticket_replies
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -177,7 +178,7 @@ INSERT INTO linode.support.ticket_replies (
 data__description
 )
 SELECT 
-'{{ description }}' --required
+'{{ description }}' /* required */
 RETURNING
 id,
 gravatar_id,

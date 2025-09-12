@@ -128,7 +128,8 @@ SELECT
 available,
 region,
 unavailable
-FROM linode.account.availability;
+FROM linode.account.availability
+;
 ```
 </TabItem>
 </Tabs>

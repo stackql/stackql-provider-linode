@@ -243,7 +243,8 @@ label,
 region,
 subnets,
 updated
-FROM linode.vpcs.vpcs;
+FROM linode.vpcs.vpcs
+;
 ```
 </TabItem>
 <TabItem value="get_vpcs">
@@ -261,7 +262,8 @@ subnets,
 updated
 FROM linode.vpcs.vpcs
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -290,8 +292,8 @@ data__region
 SELECT 
 '{{ subnets }}',
 '{{ description }}',
-'{{ label }}' --required,
-'{{ region }}' --required
+'{{ label }}' /* required */,
+'{{ region }}' /* required */
 RETURNING
 id,
 created,
@@ -355,8 +357,6 @@ REPLACE linode.vpcs.vpcs
 SET 
 data__description = '{{ description }}',
 data__label = '{{ label }}'
-WHERE 
-
 RETURNING
 id,
 created,
@@ -383,7 +383,8 @@ updated;
 Delete a single VPC and all of its Subnets.<br /><br />- The User accessing this operation must have `read_write` grants to the VPC.<br />- A successful request triggers a `vpc_delete` event and `subnet_delete` events for each deleted VPC Subnet.<br />- All of the VPC's Subnets must be eligible for deletion. Accordingly, all Configuration Profile Interfaces that each Subnet is assigned to must first be deleted. If those Interfaces are active, the associated Linodes must first be shut down before they can be removed. If any Subnet cannot be deleted, then neither the VPC nor any of its Subnets are deleted.<br />- You can't delete a VPC if a NodeBalancer is attached to one of its subnets.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.vpcs.vpcs;
+DELETE FROM linode.vpcs.vpcs
+;
 ```
 </TabItem>
 </Tabs>

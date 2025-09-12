@@ -134,7 +134,8 @@ billable,
 quota,
 region_transfers,
 used
-FROM linode.account.network_usage;
+FROM linode.account.network_usage
+;
 ```
 </TabItem>
 </Tabs>

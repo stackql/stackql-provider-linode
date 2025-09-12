@@ -153,7 +153,8 @@ inbound_policy,
 outbound,
 outbound_policy,
 version
-FROM linode.networking.firewall_rules;
+FROM linode.networking.firewall_rules
+;
 ```
 </TabItem>
 </Tabs>
@@ -178,8 +179,6 @@ data__inbound = '{{ inbound }}',
 data__inbound_policy = '{{ inbound_policy }}',
 data__outbound = '{{ outbound }}',
 data__outbound_policy = '{{ outbound_policy }}'
-WHERE 
-
 RETURNING
 fingerprint,
 inbound,

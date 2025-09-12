@@ -212,7 +212,8 @@ rules,
 status,
 tags,
 updated
-FROM linode.networking.firewall_rule_versions;
+FROM linode.networking.firewall_rule_versions
+;
 ```
 </TabItem>
 <TabItem value="get_firewall_rule_versions">
@@ -228,7 +229,8 @@ rules,
 status,
 tags,
 updated
-FROM linode.networking.firewall_rule_versions;
+FROM linode.networking.firewall_rule_versions
+;
 ```
 </TabItem>
 </Tabs>

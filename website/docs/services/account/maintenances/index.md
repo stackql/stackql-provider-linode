@@ -134,7 +134,8 @@ data,
 page,
 pages,
 results
-FROM linode.account.maintenances;
+FROM linode.account.maintenances
+;
 ```
 </TabItem>
 </Tabs>

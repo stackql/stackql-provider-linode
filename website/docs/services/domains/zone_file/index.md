@@ -111,7 +111,8 @@ Returns the zone file for the last rendered zone for the specified domain.<br />
 ```sql
 SELECT
 *
-FROM linode.domains.zone_file;
+FROM linode.domains.zone_file
+;
 ```
 </TabItem>
 </Tabs>

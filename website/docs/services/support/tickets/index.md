@@ -264,7 +264,8 @@ status,
 summary,
 updated,
 updated_by
-FROM linode.support.tickets;
+FROM linode.support.tickets
+;
 ```
 </TabItem>
 <TabItem value="get_tickets">
@@ -279,7 +280,8 @@ pages,
 results
 FROM linode.support.tickets
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -319,7 +321,7 @@ data__vpc_id
 SELECT 
 '{{ bucket }}',
 {{ database_id }},
-'{{ description }}' --required,
+'{{ description }}' /* required */,
 {{ domain_id }},
 {{ firewall_id }},
 {{ linode_id }},
@@ -328,7 +330,7 @@ SELECT
 {{ managed_issue }},
 {{ nodebalancer_id }},
 '{{ region }}',
-'{{ summary }}' --required,
+'{{ summary }}' /* required */,
 '{{ vlan }}',
 {{ volume_id }},
 {{ vpc_id }}
@@ -457,7 +459,8 @@ updated_by
 Closes a support ticket you have access to modify.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.support.tickets;
+DELETE FROM linode.support.tickets
+;
 ```
 </TabItem>
 </Tabs>
@@ -480,7 +483,8 @@ EXEC linode.support.tickets.post_ticket_attachment
 @@json=
 '{
 "file": "{{ file }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

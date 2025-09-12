@@ -191,7 +191,8 @@ ip,
 restricted,
 status,
 username
-FROM linode.profile.logins;
+FROM linode.profile.logins
+;
 ```
 </TabItem>
 <TabItem value="get_profile_logins">
@@ -204,7 +205,8 @@ data,
 page,
 pages,
 results
-FROM linode.profile.logins;
+FROM linode.profile.logins
+;
 ```
 </TabItem>
 </Tabs>

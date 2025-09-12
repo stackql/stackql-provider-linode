@@ -248,7 +248,8 @@ migrations,
 placement_group_policy,
 placement_group_type,
 region
-FROM linode.placement.placement_groups;
+FROM linode.placement.placement_groups
+;
 ```
 </TabItem>
 <TabItem value="get_placement_groups">
@@ -263,7 +264,8 @@ pages,
 results
 FROM linode.placement.placement_groups
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -290,10 +292,10 @@ data__placement_group_type,
 data__region
 )
 SELECT 
-'{{ label }}' --required,
-'{{ placement_group_policy }}' --required,
-'{{ placement_group_type }}' --required,
-'{{ region }}' --required
+'{{ label }}' /* required */,
+'{{ placement_group_policy }}' /* required */,
+'{{ placement_group_type }}' /* required */,
+'{{ region }}' /* required */
 RETURNING
 id,
 is_compliant,
@@ -368,8 +370,6 @@ Change the `label` for a specific placement group. This is the only value you ca
 REPLACE linode.placement.placement_groups
 SET 
 data__label = '{{ label }}'
-WHERE 
-
 RETURNING
 id,
 is_compliant,
@@ -396,7 +396,8 @@ region;
 Deletes a placement group you have permission to `read_write`.<br /><br />- Deleting a placement group can't be undone.<br /><br />- All Linodes need to be [removed](https://techdocs.akamai.com/linode-api/reference/post-group-unassign) before you can delete a placement group.<br /><br />- If your placement group is non-compliant, you can't delete it. You need to wait for our help to bring it [compliant](https://www.linode.com/docs/products/compute/compute-instances/guides/placement-groups/#non-compliance-precedence).<br /><br />&lt;&lt;LB&gt;&gt;<br /><br />&gt; 📘<br />&gt;<br />&gt; To run this operation, your user needs the `add_linodes` [grant](https://techdocs.akamai.com/linode-api/reference/get-user-grants). Talk to your local account administrator about grant management for your user.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.placement.placement_groups;
+DELETE FROM linode.placement.placement_groups
+;
 ```
 </TabItem>
 </Tabs>
@@ -420,7 +421,8 @@ EXEC linode.placement.placement_groups.post_group_add_linode
 @@json=
 '{
 "linodes": "{{ linodes }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_group_unassign">
@@ -432,7 +434,8 @@ EXEC linode.placement.placement_groups.post_group_unassign
 @@json=
 '{
 "linodes": "{{ linodes }}"
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

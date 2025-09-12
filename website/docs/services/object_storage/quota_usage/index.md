@@ -122,7 +122,8 @@ Returns usage data for a specific `object-storage-quotaId`. This includes the ma
 SELECT
 quota_limit,
 usage
-FROM linode.object_storage.quota_usage;
+FROM linode.object_storage.quota_usage
+;
 ```
 </TabItem>
 </Tabs>

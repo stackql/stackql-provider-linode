@@ -161,7 +161,8 @@ View an LKE Kubernetes version available for deployment to a standard tier Kuber
 ```sql
 SELECT
 id
-FROM linode.lke.non_enterprise_versions;
+FROM linode.lke.non_enterprise_versions
+;
 ```
 </TabItem>
 <TabItem value="get_lke_versions">
@@ -174,7 +175,8 @@ data,
 page,
 pages,
 results
-FROM linode.lke.non_enterprise_versions;
+FROM linode.lke.non_enterprise_versions
+;
 ```
 </TabItem>
 </Tabs>

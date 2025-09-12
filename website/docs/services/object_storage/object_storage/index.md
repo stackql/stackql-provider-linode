@@ -123,7 +123,8 @@ The amount of outbound data transfer used by your account's Object Storage bucke
 ```sql
 SELECT
 used
-FROM linode.object_storage.object_storage;
+FROM linode.object_storage.object_storage
+;
 ```
 </TabItem>
 </Tabs>
@@ -143,6 +144,7 @@ Cancel Object Storage on an Account.<br /><br />&gt; 🚧<br />&gt;<br />&gt; Th
 
 ```sql
 EXEC linode.object_storage.object_storage.post_cancel_object_storage 
+
 ;
 ```
 </TabItem>

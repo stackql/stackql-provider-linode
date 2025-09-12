@@ -294,7 +294,8 @@ tags,
 updated
 FROM linode.volumes.volumes
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 <TabItem value="get_volumes">
@@ -309,7 +310,8 @@ pages,
 results
 FROM linode.volumes.volumes
 WHERE page = '{{ page }}'
-AND page_size = '{{ page_size }}';
+AND page_size = '{{ page_size }}'
+;
 ```
 </TabItem>
 </Tabs>
@@ -341,7 +343,7 @@ data__tags
 SELECT 
 {{ config_id }},
 '{{ encryption }}',
-'{{ label }}' --required,
+'{{ label }}' /* required */,
 {{ linode_id }},
 '{{ region }}',
 {{ size }},
@@ -442,8 +444,6 @@ SET
 data__label = '{{ label }}',
 data__region = '{{ region }}',
 data__tags = '{{ tags }}'
-WHERE 
-
 RETURNING
 id,
 linode_id,
@@ -476,7 +476,8 @@ updated;
 Deletes a Volume you have permission to `read_write`.<br /><br />- __Deleting a Volume is a destructive action and cannot be undone.__<br /><br />- Deleting stops billing for the Volume. You will be billed for time used within the billing period the Volume was active.<br /><br />- Volumes that are migrating cannot be deleted until the migration is finished.<br /><br />[Learn more...](https://techdocs.akamai.com/cloud-computing/docs/getting-started-with-the-linode-cli)<br /><br />[Learn more...](https://techdocs.akamai.com/linode-api/reference/get-started#oauth)
 
 ```sql
-DELETE FROM linode.volumes.volumes;
+DELETE FROM linode.volumes.volumes
+;
 ```
 </TabItem>
 </Tabs>
@@ -504,7 +505,8 @@ EXEC linode.volumes.volumes.post_attach_volume
 "config_id": {{ config_id }}, 
 "linode_id": {{ linode_id }}, 
 "persist_across_boots": {{ persist_across_boots }}
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_clone_volume">
@@ -516,7 +518,8 @@ EXEC linode.volumes.volumes.post_clone_volume
 @@json=
 '{
 "label": "{{ label }}"
-}';
+}'
+;
 ```
 </TabItem>
 <TabItem value="post_detach_volume">
@@ -525,6 +528,7 @@ Detaches a Volume on your Account from a Linode on your Account. In order for th
 
 ```sql
 EXEC linode.volumes.volumes.post_detach_volume 
+
 ;
 ```
 </TabItem>
@@ -537,7 +541,8 @@ EXEC linode.volumes.volumes.post_resize_volume
 @@json=
 '{
 "size": {{ size }}
-}';
+}'
+;
 ```
 </TabItem>
 </Tabs>

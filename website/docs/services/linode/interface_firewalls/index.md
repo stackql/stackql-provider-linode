@@ -152,7 +152,8 @@ rules,
 status,
 tags,
 updated
-FROM linode.linode.interface_firewalls;
+FROM linode.linode.interface_firewalls
+;
 ```
 </TabItem>
 </Tabs>
